@@ -66,7 +66,24 @@ Set_zsh() {
     fi
 }
 
+Set_zsh() {
+    echo "Setting Zsh as default shell for Termux..."
+    # Termux doesn't support `chsh`, so we modify the startup behavior manually
+    if ! grep -q "exec zsh" "$HOME/.bashrc"; then
+        echo 'exec zsh' >>"$HOME/.bashrc"
+        echo "Added 'exec zsh' to .bashrc — Zsh will now start automatically."
+    fi
+}
+
+Plugin_zsh() {
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-completions.git \
+        ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+}
+
 Main() {
+    banner
     Install_pkg
     Access_termux
     Bash_bin
