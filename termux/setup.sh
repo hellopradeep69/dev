@@ -4,10 +4,11 @@ REPO="$(pwd)"
 
 banner() {
     clear
-    echo " "
+    echo ""
     echo "╔═══════════════════════════════════╗"
     echo "║        Termux Setup Script        ║"
     echo "╚═══════════════════════════════════╝"
+    echo " "
     echo ""
     echo "do you want to continue(Y/n)"
     read -r value
@@ -76,6 +77,7 @@ Set_zsh() {
 }
 
 Plugin_zsh() {
+    echo "Downloading Plugins for zsh "
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     git clone https://github.com/zsh-users/zsh-completions.git \
@@ -90,6 +92,7 @@ Main() {
     Install_zsh
     Copy_file
     Set_zsh
+    Plugin_zsh
 }
 
 Main
