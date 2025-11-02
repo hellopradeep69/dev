@@ -14,7 +14,7 @@ banner() {
     if [[ "$value" = "n" ]]; then
         echo "Aborting setup"
         exit 0
-    elif [[ "$value" = "y" || "$value" = "Y" ]]
+    elif [[ "$value" = "y" || "$value" = "Y" ]]; then
         echo "Starting setup..."
     else
         echo "Invalid input. Aborting."
@@ -28,7 +28,7 @@ Install_pkg() {
     pkg update -y && pkg upgrade -y
 
     echo "Installing essential packages..."
-    pkg install -y git curl wget vim nano htop zsh lazygit tmux python neovim
+    pkg install -y git curl wget vim nano htop zsh lazygit tmux python neovim iproute2
 }
 
 # Local bin in bash
