@@ -3,52 +3,9 @@
 # Install all the essential
 
 # Install package
-PACKAGES=(cmake
-    picom
-    rofi
-    wezterm
-    alacritty
-    zsh
-    btop
-    dunst
-    git
-    curl
-    wget
-    tmux
-    bat
-    unzip)
-
-# Detect os
-detect_distro() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        echo "$ID"
-    else
-        echo "unknown"
-    fi
-}
-
-install_packages() {
-    distro=$(detect_distro)
-    echo "==> Detected distro: $distro"
-    case "$distro" in
-    arch | manjaro | endeavouros)
-        sudo pacman -Syu --needed --noconfirm "${PACKAGES[@]}"
-        ;;
-    debian | ubuntu | linuxmint)
-        sudo apt update && sudo apt install -y "${PACKAGES[@]}"
-        ;;
-    fedora)
-        sudo dnf install -y "${PACKAGES[@]}"
-        ;;
-    opensuse* | suse)
-        sudo zypper install -y "${PACKAGES[@]}"
-        ;;
-    *)
-        echo "⚠️ Unsupported distro: $distro"
-        echo "Please install these packages manually: ${PACKAGES[*]}"
-        ;;
-    esac
+Install_pack() {
+    sudo apt update -y && sudo apt -y upgrade
+    sudo apt install -y cmake picom rofi wezterm alacritty zsh btop dunst git curl wget tmux bat unzip
 }
 
 Install_fzf() {
@@ -118,6 +75,15 @@ Plugin_zsh() {
         ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
 }
 
+Bat_install() {
+    mkdir -p "$HOME"/.local/bin
+    ln -s /usr/bin/batcat "$HOME"/.local/bin/bat
+}
+
+Fd_install() {
+    ln -s $(which fdfind) "$HOME"/.local/bin/fd
+}
+
 # Install packages
 echo "Installing necessary packages..."
 install_packages
@@ -134,6 +100,12 @@ Install_neovim
 # Installing starship
 echo "Installing starship..."
 Install_starship
+
+echo "Install bat"
+Bat_install
+
+echo "Install fd"
+Fd_install
 
 # Install font
 echo "Installing Fonts"
