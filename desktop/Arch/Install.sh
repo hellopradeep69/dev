@@ -57,3 +57,6 @@ Install_nvimconf
 # Install zsh plugins
 echo "Install zsh plugin"
 Plugin_zsh
+
+echo ""
+echo "Now You can proudly say I use arch btw"
