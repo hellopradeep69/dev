@@ -5,7 +5,7 @@
 Install_pack() {
     sudo pacman -Syu --noconfirm
     sudo pacman -S --noconfirm \
-        cmake picom rofi wezterm alacritty zsh btop dunst git curl wget tmux bat unzip fzf neovim fastfetch fd
+        cmake rofi wezterm alacritty zsh btop dunst git curl wget tmux bat unzip fzf neovim fastfetch fd
 }
 
 Install_font() {

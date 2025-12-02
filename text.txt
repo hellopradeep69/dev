@@ -1,0 +1,13 @@
+cp -r ~/.config/i3/* ~/.dotfiles/i3/
+cp -r ~/.config/i3status/* ~/.dotfiles/i3status/
+cp -r ~/.config/rofi/* ~/.dotfiles/rofi/
+cp -r ~/.config/picom/* ~/.dotfiles/picom/
+cp -r ~/.config/ghostty/* ~/.dotfiles/ghostty/
+cp -r ~/.config/dunst/* ~/.dotfiles/dunst/
+cp -r ~/.local/bin/* ~/.dotfiles/scripts/
+cp -r ~/.config/fastfetch/* ~/.dotfiles/fastfetch/
+cp -r ~/.config/zathura/* ~/.dotfiles/zathura/
+cp ~/.wezterm.lua ~/.dotfiles/
+cp ~/.tmux.conf ~/.dotfiles/
+cp ~/.zshrc ~/.dotfiles/
+
