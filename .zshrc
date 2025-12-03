@@ -123,13 +123,13 @@ export LANGUAGE="en_IN.UTF-8:en_US.UTF-8"
 export LC_ALL="en_IN.UTF-8"
 
 # FZF default options (like in Fish)
-export FZF_DEFAULT_OPTS='--bind j:down,k:up,q:abort --border --cycle'
+# export FZF_DEFAULT_OPTS='--bind j:down,k:up,q:abort --border --cycle'
 
 # keybindings
 bindkey -M viins '^e' edit-command-line
 bindkey -M vicmd '^e' edit-command-line
-# bindkey -e -r '^[x'
-# bindkey -a -r ':'
+bindkey -e -r '^[x'
+bindkey -a -r ':'
 
 #  Enable vi keybindings + jj to escape
 bindkey -v
@@ -137,31 +137,18 @@ bindkey -v
 # Map jj to escape insert mode
 bindkey -M viins 'jj' vi-cmd-mode
 
-#  Load Starship prompt
-# eval "$(starship init zsh)"
-
 # Run Fastfetch at shell startup
-if command -v fastfetch >/dev/null 2>&1; then
-  fastfetch --config ~/.config/fastfetch/config2.jsonc --logo-type none
-fi
-
-#  Run custom script when not in tmux
-# if [ -z "$TMUX" ]; then
-#   if command -v tmenu >/dev/null 2>&1; then
-#     ~/.local/bin/topen.sh -d home
-#   fi
+# if command -v fastfetch >/dev/null 2>&1; then
+#   fastfetch --config ~/.config/fastfetch/config2.jsonc --logo-type none
 # fi
+
 
 # Aliases
 alias :q="exit"
 alias lh="ls -a"
-alias lvim="NVIM_APPNAME=Lazyvimed nvim"
-alias nvchad="NVIM_APPNAME=nvchad nvim"
-alias nv="NVIM_APPNAME=Hellonvim nvim"
-alias mini="NVIM_APPNAME=mini nvim"
 
-# fzf 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # idk
 # export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
