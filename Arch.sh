@@ -78,6 +78,16 @@ Ghostty_setup() {
     cp -r $HOME/dev/resource/ghostty/config ~/.config/ghostty/
 }
 
+Script_install() {
+    echo "Scripting Install"
+
+    trash "$HOME/.local/bin/"
+    mkdir -p "$HOME/.local/bin/"
+
+    cp -r $HOME/dev/resource/scripts/. $HOME/.local/bin/
+    echo "Scripts copied to $HOME/.local/bin/"
+}
+
 Main() {
     Ghostty_setup
     Install_font
@@ -85,6 +95,7 @@ Main() {
     Tmux_in
     Nvim_setup
     Zsh_setup
+    Script_install
     echo ""
     echo "Basic Setup done"
 }

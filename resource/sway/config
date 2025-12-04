@@ -232,21 +232,17 @@ default_floating_border  pixel 1
 bindsym Menu exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 
 # Assign
-assign [class="Telegram"] 10
-assign [class="zen"] 2
-assign [class="vlc"] 4
-assign [class="Nemo"] 4
-assign [class="dev.zed.Zed"] 3
+assign [app_id="org.telegram.desktop"] 10
+assign [app_id="zen"] 2
+assign [app_id="vlc"] 4
+assign [app_id="dev.zed.Zed"] 3
 
 # no focus
-no_focus [class="dev.zed.Zed"]
-no_focus [class="Telegram"]
+no_focus [app_id="dev.zed.Zed"]
+no_focus [app_id="org.telegram.desktop"]
 
 # Floating
-for_window [class="cinnamon-settings network"] floating enable
-for_window [class="com.mitchellh.ghostty"] border pixel 1
-for_window [class="Gnome-screenshot"] floating enable
-for_window [class="main"] floating enable
+# for_window [app_id="com.mitchellh.ghostty"] border pixel 1
 
 # For window | workspace
 for_window [workspace="5"] layout tabbed
