@@ -112,7 +112,7 @@ case "$Options" in
     bash $HOME/dev/hyprland.sh
     ;;
 -sway)
-    $HOME/dev/sway.sh
+    bash $HOME/dev/sway.sh
     ;;
 *)
     Main
