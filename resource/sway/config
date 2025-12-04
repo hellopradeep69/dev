@@ -228,6 +228,9 @@ include /etc/sway/config.d/*
 # Exec
 exec --no-startup-id wl-paste --watch cliphist store
 
+# Focus on window activation
+focus_on_window_activation focus
+
 #no title bar
 default_border pixel 1
 default_floating_border  pixel 1
@@ -253,5 +256,3 @@ no_focus [app_id="org.telegram.desktop"]
 for_window [workspace="5"] layout tabbed
 for_window [workspace="10"] layout tabbed
 
-# Focus on window activation
-focus_on_window_activation focus
