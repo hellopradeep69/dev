@@ -2,11 +2,12 @@
 # Install Sway | i3wm replacement
 
 Install_sway() {
-    sudo pacman -Syu
-    sudo pacman -S sway swaylock i3status rofi-wayland brightnessctl mako
+    # sudo pacman -Syu
+    sudo pacman -S --noconfirm --needed sway swaylock i3status rofi-wayland brightnessctl mako
 }
 
 Make_dir() {
+    trash $HOME/.config/i3status/ $HOME/.config/sway/
     mkdir -p $HOME/.config/i3status/
     mkdir -p $HOME/.config/sway/
 }

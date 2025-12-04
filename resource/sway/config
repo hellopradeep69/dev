@@ -152,7 +152,7 @@ set $menu rofi -show drun
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+space focus prev
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -222,8 +222,35 @@ bar {
     }
 }
 
+include /etc/sway/config.d/*
+
 #no title bar
 default_border pixel 1
 default_floating_border  pixel 1
 
-include /etc/sway/config.d/*
+# keybind
+bindsym Menu exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# Assign
+assign [class="Telegram"] 10
+assign [class="zen"] 2
+assign [class="vlc"] 4
+assign [class="Nemo"] 4
+assign [class="dev.zed.Zed"] 3
+
+# no focus
+no_focus [class="dev.zed.Zed"]
+no_focus [class="Telegram"]
+
+# Floating
+for_window [class="cinnamon-settings network"] floating enable
+for_window [class="com.mitchellh.ghostty"] border pixel 1
+for_window [class="Gnome-screenshot"] floating enable
+for_window [class="main"] floating enable
+
+# For window | workspace
+for_window [workspace="5"] layout tabbed
+for_window [workspace="10"] layout tabbed
+
+# Focus on window activation
+focus_on_window_activation focus
