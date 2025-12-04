@@ -6,7 +6,8 @@ Options=$1
 Install_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
-        btop curl wget trash-cli gcc nodejs npm wl-clipboard cliphist grim telegram-desktop
+        btop curl wget trash-cli gcc nodejs npm wl-clipboard cliphist grim \
+        telegram-desktop obs-studio
 }
 
 Install_font() {
