@@ -34,14 +34,14 @@
     },
     "battery":{
         "states": {
-            "warning": 30,
+            "warning": 35,
             "critical": 15
         },
         "format": " BAT : {capacity}%  ({time}) |",
     },
     "network": {
         "format": "{ifname}",
-        "format-wifi": "W: {essid} ({signalStrength}%) |",
+        "format-wifi": " W: {essid} ({signalStrength}%) |",
         "format-disconnected": "Disconnected", //An empty format will hide the module.
     },
     "clock": {

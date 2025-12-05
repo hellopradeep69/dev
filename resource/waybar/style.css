@@ -5,5 +5,11 @@
 }
 
 #workspaces button.active {
-    background-color: darkslateblue;
+    /* background-color: darkslateblue; */
+    background-color: #2783AE;
+}
+
+#battery.warning {
+    color: red;
+    font-weight: bold;
 }

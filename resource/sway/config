@@ -238,6 +238,7 @@ default_floating_border  pixel 1
 # keybind
 bindsym Menu exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bindsym Shift+Print exec  grim -g "$(slurp)"
+bindsym $mod+p bar mode toggle
 
 # Assign
 assign [app_id="org.telegram.desktop"] 10
