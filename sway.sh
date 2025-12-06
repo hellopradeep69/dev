@@ -3,7 +3,7 @@
 
 Install_sway() {
     # sudo pacman -Syu
-    sudo pacman -S --noconfirm --needed sway swaylock i3status rofi-wayland brightnessctl mako slurp swaybg
+    sudo pacman -S --noconfirm --needed sway swaylock i3status rofi-wayland brightnessctl mako slurp swaybg autotiling
 }
 
 Make_dir() {
@@ -22,6 +22,10 @@ Main() {
     Install_sway
     Make_dir
     Copy_it
+    echo " "
+    echo "reloading"
+    sleep 2
+    swaymsg reload
 }
 
 Main

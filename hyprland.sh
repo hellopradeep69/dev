@@ -2,7 +2,8 @@
 
 Install_hypr() {
     echo "Installing hyprland waybar"
-    sudo pacman -S --noconfirm --needed hyprland waybar swaybg
+    sudo pacman -S --noconfirm --needed hyprland waybar swaybg mako rofi-wayland \
+        swaylock brightnessctl slurp grim
 }
 
 Config_hypr() {

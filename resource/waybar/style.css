@@ -9,6 +9,10 @@
     background-color: #2783AE;
 }
 
+#pulseaudio.muted {
+    color: yellow;
+}
+
 #battery.warning {
     color: red;
     font-weight: bold;

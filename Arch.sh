@@ -7,13 +7,20 @@ Install_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm wl-clipboard cliphist grim \
-        telegram-desktop obs-studio
+        telegram-desktop obs-studio acpi
 }
 
 Install_font() {
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
     fc-cache -f -v
+}
+
+Install_wallie() {
+    if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
+        echo "Arch comes with anime waifu"
+        cp "$HOME/dev/resource/wallpaper/anime_waifu.jpg" "$HOME/Pictures/"
+    fi
 }
 
 Install_zplugin() {
@@ -46,13 +53,13 @@ Zsh_setup() {
         echo "zsh available not touching"
     else
         echo "Downloading oh my zsh"
-        # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         Install_zplugin
     fi
 
     echo "Reinstalling zsh and zsh conf"
     [[ -f "$HOME/.zshrc" ]] && trash "$HOME/.zshrc"
-    cp -r "$HOME/dev/.zshrc" "$HOME/.zshrc"
+    cp "$HOME/dev/.zshrc" "$HOME/.zshrc"
 
 }
 
@@ -76,9 +83,9 @@ Nvim_setup() {
 Ghostty_setup() {
     echo ""
     echo "Resetting ghostty config"
-    rm -rf ~/.config/ghostty
+    trash ~/.config/ghostty
     mkdir -p ~/.config/ghostty
-    cp -r $HOME/dev/resource/ghostty/config ~/.config/ghostty/
+    cp -r $HOME/dev/resource/ghostty/. ~/.config/ghostty/
 }
 
 Script_install() {
@@ -92,13 +99,14 @@ Script_install() {
 }
 
 Main() {
-    Ghostty_setup
     Install_font
     Install_pack
-    Tmux_in
-    Nvim_setup
-    Zsh_setup
-    Script_install
+    Install_wallie
+    # Tmux_in
+    # Nvim_setup
+    # Zsh_setup #commented out uncomment when first time
+    # Script_install #commented out uncomment when first time
+    # Ghostty_setup
     echo ""
     echo "Basic Setup done"
 }

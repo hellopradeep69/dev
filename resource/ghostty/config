@@ -9,6 +9,9 @@ font-family = JetBrainsMono Nerd Font
 confirm-close-surface=false
 fullscreen = false
 
+background-opacity = 0.85
+# background-blur = true
+
 # cursor
 cursor-style = block
 cursor-style-blink = false

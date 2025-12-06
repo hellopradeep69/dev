@@ -29,8 +29,8 @@
         "format": " {used:0.1f}G |"
     },
     "pulseaudio": {
-        "format": " ♪ {volume}% |",
-        "format-muted": "muted {volume}% |",
+        "format": " ♪: {volume}% |",
+        "format-muted": "muted ({volume}%) |",
     },
     "battery":{
         "states": {

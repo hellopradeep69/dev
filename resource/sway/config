@@ -11,6 +11,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term ghostty
+set $browser zen-browser
 # Your preferred application launcher
 set $menu rofi -show drun
 
@@ -138,13 +139,15 @@ set $menu rofi -show drun
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    # bindsym $mod+b splith
+    # bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
+
+    bindsym $mod+t split toggle
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -189,6 +192,7 @@ mode "resize" {
     bindsym Right resize grow width 10px
 
     # Return to default mode
+    bindsym $mod+o mode "default"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -215,6 +219,7 @@ bar {
     position top
     font pango: Terminess Nerd Font Mono 11
     status_command i3status
+    # status_command i3blocks
 
     colors {
         statusline #ffffff
@@ -227,6 +232,7 @@ include /etc/sway/config.d/*
 
 # Exec
 exec --no-startup-id wl-paste --watch cliphist store
+exec_always autotiling
 
 # Focus on window activation
 focus_on_window_activation focus
@@ -235,16 +241,16 @@ focus_on_window_activation focus
 default_border pixel 1
 default_floating_border  pixel 1
 
-# keybind
+# Hellopradeep | keybind
 bindsym Menu exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
 bindsym Shift+Print exec  grim -g "$(slurp)"
 bindsym $mod+p bar mode toggle
+bindsym $mod+b exec $browser
 
 # Assign
 assign [app_id="org.telegram.desktop"] 10
 assign [app_id="zen"] 2
-assign [class="vlc"] 4
-assign [class="dev.zed.Zed"] 3
+assign [app_id="thunar"] 3
 
 # no focus
 no_focus [class="dev.zed.Zed"]
