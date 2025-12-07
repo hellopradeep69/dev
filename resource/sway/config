@@ -232,6 +232,7 @@ include /etc/sway/config.d/*
 
 # Exec
 exec --no-startup-id wl-paste --watch cliphist store
+exec --no-startup-id ~/.local/bin/uptime.sh
 exec_always autotiling
 
 # Focus on window activation
@@ -251,6 +252,7 @@ bindsym $mod+b exec $browser
 assign [app_id="org.telegram.desktop"] 10
 assign [app_id="zen"] 2
 assign [app_id="thunar"] 3
+assign [app_id="mpv"] 3
 
 # no focus
 no_focus [class="dev.zed.Zed"]
