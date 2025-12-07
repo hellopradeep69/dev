@@ -7,7 +7,8 @@ Install_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm wl-clipboard cliphist grim \
-        telegram-desktop obs-studio acpi
+        telegram-desktop obs-studio acpi mpv yt-dlp
+
 }
 
 Install_font() {
@@ -23,23 +24,6 @@ Install_wallie() {
     fi
 }
 
-Install_zplugin() {
-    echo "Installin zsh plugin"
-
-    # Create the directory if missing
-    mkdir -p ~/.oh-my-zsh/custom/plugins
-
-    # Install plugins
-    git clone https://github.com/zsh-users/zsh-autosuggestions \
-        ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting \
-        ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-    git clone https://github.com/zsh-users/zsh-completions \
-        ~/.oh-my-zsh/custom/plugins/zsh-completions
-}
-
 Zsh_setup() {
     Shell=$(echo "$SHELL")
     if [[ $Shell == "/usr/bin/zsh" ]]; then
@@ -47,14 +31,6 @@ Zsh_setup() {
     else
         echo "not zsh"
         chsh -s $(which zsh)
-    fi
-
-    if [[ -d "$HOME/.oh-my-zsh" ]]; then
-        echo "zsh available not touching"
-    else
-        echo "Downloading oh my zsh"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        Install_zplugin
     fi
 
     echo "Reinstalling zsh and zsh conf"
@@ -102,9 +78,10 @@ Main() {
     Install_font
     Install_pack
     Install_wallie
+    #commented out uncomment when first time
     # Tmux_in
     # Nvim_setup
-    # Zsh_setup #commented out uncomment when first time
+    Zsh_setup #commented out uncomment when first time
     # Script_install #commented out uncomment when first time
     # Ghostty_setup
     echo ""
