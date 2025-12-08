@@ -191,6 +191,9 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
+    # space to focus diff win
+    bindsym space focus prev
+
     # Return to default mode
     bindsym $mod+o mode "default"
     bindsym Return mode "default"
@@ -232,8 +235,7 @@ include /etc/sway/config.d/*
 
 # Exec
 exec --no-startup-id wl-paste --watch cliphist store
-exec --no-startup-id ~/.local/bin/uptime.sh
-exec_always autotiling
+# exec_always autotiling
 
 # Focus on window activation
 focus_on_window_activation focus
@@ -250,6 +252,7 @@ bindsym $mod+b exec $browser
 
 # Assign
 assign [app_id="org.telegram.desktop"] 10
+assign [app_id="com.obsproject.Studio"] 3
 assign [app_id="zen"] 2
 assign [app_id="thunar"] 3
 assign [app_id="mpv"] 3

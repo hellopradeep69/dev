@@ -92,8 +92,7 @@ read_file dum {
 }
 
 read_file uptime {
-        path="/home/hellopradeep/.config/i3status/uptime.txt"
-        # path = "/proc/uptime"
+        path = "/proc/uptime"
         format=" %content"
         color_good="#ffffff"
 }

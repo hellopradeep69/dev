@@ -23,6 +23,7 @@ Config_hypr() {
 Main() {
     Install_hypr
     Config_hypr
+    hyprctl reload
 }
 
 Main

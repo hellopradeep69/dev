@@ -7,7 +7,7 @@ Install_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm wl-clipboard cliphist grim \
-        telegram-desktop obs-studio acpi mpv yt-dlp
+        telegram-desktop obs-studio acpi mpv yt-dlp eza
 
 }
 
@@ -21,6 +21,7 @@ Install_wallie() {
     if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
         echo "Arch comes with anime waifu"
         cp "$HOME/dev/resource/wallpaper/anime_waifu.jpg" "$HOME/Pictures/"
+        cp "$HOME/dev/resource/wallpaper/Arch.jpg" "$HOME/Pictures/"
     fi
 }
 
@@ -81,8 +82,8 @@ Main() {
     #commented out uncomment when first time
     # Tmux_in
     # Nvim_setup
-    Zsh_setup #commented out uncomment when first time
-    # Script_install #commented out uncomment when first time
+    # Zsh_setup #commented out uncomment when first time
+    Script_install #commented out uncomment when first time
     # Ghostty_setup
     echo ""
     echo "Basic Setup done"
