@@ -37,6 +37,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # opts
+setopt interactivecomments
 setopt append_history inc_append_history share_history
 setopt autocd
 setopt auto_param_slash
