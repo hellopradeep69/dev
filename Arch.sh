@@ -14,7 +14,7 @@ Install_pack() {
 Install_font() {
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
-    fc-cache -f -v
+    # fc-cache -f -v
 }
 
 Install_wallie() {
@@ -68,9 +68,11 @@ Ghostty_setup() {
 Script_install() {
     echo "Scripting Install"
 
+    echo "trashing scripts"
     trash "$HOME/.local/bin/"
     mkdir -p "$HOME/.local/bin/"
 
+    echo " "
     cp -r $HOME/dev/resource/scripts/. $HOME/.local/bin/
     echo "Scripts copied to $HOME/.local/bin/"
 }
@@ -83,8 +85,8 @@ Main() {
     # Tmux_in
     # Nvim_setup
     Zsh_setup #commented out uncomment when first time
-    # Script_install #commented out uncomment when first time
-    # Ghostty_setup
+    Script_install #commented out uncomment when first time
+    Ghostty_setup
     echo ""
     echo "Basic Setup done"
 }

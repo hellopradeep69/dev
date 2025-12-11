@@ -19,7 +19,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # russel theme
 zi snippet OMZL::git.zsh
 zi snippet OMZL::async_prompt.zsh
-zi snippet OMZP::git
+zi snippet OMZP::command-not-found
 zi cdclear -q # <- forget completions provided up to this moment
 setopt promptsubst
 zi snippet OMZT::robbyrussell
@@ -31,10 +31,12 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 autoload -U compinit && compinit
 autoload -U colors && colors
+autoload -z edit-command-line
 
 # cmp
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # opts
 setopt interactivecomments
@@ -55,6 +57,12 @@ mkcd() {
 HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE=~/.zhistory
+HISTDUP=erase
+setopt hist_save_no_dups
+setopt hist_ignore_all_dups
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
 
 # alias
 alias ls='eza'
@@ -69,7 +77,6 @@ export LANG="en_IN.UTF-8"
 export LANGUAGE="en_IN.UTF-8:en_US.UTF-8"
 export LC_ALL="en_IN.UTF-8"
 
-autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^e" edit-command-line
 

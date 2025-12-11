@@ -263,6 +263,7 @@ no_focus [app_id="org.telegram.desktop"]
 
 # Floating
 # for_window [app_id="com.mitchellh.ghostty"] border pixel 1
+for_window [class="Tk"] floating enable
 
 # For window | workspace
 for_window [workspace="5"] layout tabbed

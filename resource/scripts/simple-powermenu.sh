@@ -19,7 +19,8 @@ Suspend)
     if [[ $WM == *hyprland* ]]; then
         swaylock --daemonize -c 282a36 && systemctl suspend
     else
-        swaylock --daemonize -c 282a36 && systemctl suspend
+        # swaylock --daemonize -c 282a36 && systemctl suspend
+        swaylock --daemonize -i ~/Pictures/Arch.jpg && systemctl suspend
     fi
     ;;
 

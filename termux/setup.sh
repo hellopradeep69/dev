@@ -29,7 +29,7 @@ Install_pkg() {
     pkg update -y && pkg upgrade -y
 
     echo "Installing essential packages..."
-    pkg install -y git curl wget vim nano htop zsh lazygit tmux python neovim iproute2 fzf
+    pkg install -y git curl wget vim nano htop zsh tmux python neovim iproute2 fzf npm
 }
 
 # Local bin in bash
@@ -48,17 +48,6 @@ Access_termux() {
     echo "Permission granted"
 }
 
-#do you wanna use zsh
-Install_zsh() {
-    RUNZSH=no CHSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-}
-
-Copy_file() {
-    cp -r "$REPO/.tmux.conf" "$HOME/."
-    cp -r "$REPO/.zshrc" "$HOME/."
-    echo "copied tmux and zshrc "
-}
-
 Set_zsh() {
     echo "Setting Zsh as default shell for Termux..."
     # Termux doesn't support `chsh`, so we modify the startup behavior manually
@@ -68,23 +57,45 @@ Set_zsh() {
     fi
 }
 
-Plugin_zsh() {
-    echo "Downloading Plugins for zsh "
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-    git clone https://github.com/zsh-users/zsh-completions.git \
-        ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions
+#do you wanna use zsh
+Zsh_setup() {
+    Shell=$(echo "$SHELL")
+    if [[ $Shell == "/usr/bin/zsh" ]]; then
+        echo "zsh"
+    else
+        echo "not zsh"
+        Set_zsh
+    fi
+
+    echo "Reinstalling zsh and zsh conf"
+    [[ -f "$HOME/.zshrc" ]] && trash "$HOME/.zshrc"
+    cp "$HOME/dev/.zshrc" "$HOME/.zshrc"
+
 }
+
+Nvim_setup() {
+    echo ""
+    echo "Nvim setuping.."
+    rm -rf ~/.config/nvim
+    mkdir -p ~/.config/nvim
+    git clone https://github.com/hellopradeep69/nvim.git ~/.config/nvim/
+    rm -rf ~/.config/nvim/.git
+    rm -rf ~/.config/nvim/README.md
+}
+
+Tmux_conf() {
+    cp -r "$REPO/.tmux.conf" "$HOME/."
+    echo "copied tmux and zshrc "
+}
+
 
 Main() {
     banner
     Install_pkg
     Access_termux
     Bash_bin
-    Install_zsh
-    Copy_file
-    Set_zsh
-    Plugin_zsh
+    Tmux_conf
+    Zsh_setup
 }
 
 Main
