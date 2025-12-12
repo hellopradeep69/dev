@@ -29,7 +29,7 @@ Install_pkg() {
     pkg update -y && pkg upgrade -y
 
     echo "Installing essential packages..."
-    pkg install -y git curl wget vim nano htop zsh tmux python neovim iproute2 fzf npm
+    pkg install -y git curl wget vim nano htop zsh tmux python neovim iproute2 fzf npm eza
 }
 
 # Local bin in bash
