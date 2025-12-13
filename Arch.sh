@@ -103,6 +103,9 @@ case "$Options" in
 -sway)
     bash $HOME/dev/sway.sh
     ;;
+-i3)
+    bash $HOME/dev/i3wm.sh
+    ;;
 *)
     Main
     echo "-help for info on installing hyprland and sway "
