@@ -3,7 +3,7 @@
 
 Install_i3() {
     # sudo pacman -Syu
-    sudo pacman -S --noconfirm --needed i3-wm i3lock i3status dunst rofi xclip copyq
+    sudo pacman -S --noconfirm --needed i3-wm i3lock i3status dunst rofi xclip copyq picom
 }
 
 Make_dir() {

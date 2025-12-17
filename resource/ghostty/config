@@ -1,13 +1,14 @@
 # This is the configuration file for Ghostty.
 
 # config
-window-decoration = none
+# window-decoration = none
 # window-decoration = auto
 window-padding-x = 12
 window-padding-y = 10
 font-family = JetBrainsMono Nerd Font
 confirm-close-surface=false
 fullscreen = false
+window-decoration = server
 
 background-opacity = 0.85
 # background-blur = true

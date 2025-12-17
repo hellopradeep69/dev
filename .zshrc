@@ -68,6 +68,7 @@ setopt hist_verify
 alias ls='eza'
 alias lh='eza -a'
 alias :q="exit"
+alias zen="zen-browser"
 
 # fzf
 source <(fzf --zsh)
