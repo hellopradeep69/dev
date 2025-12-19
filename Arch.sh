@@ -82,9 +82,9 @@ Main() {
     Install_pack
     Install_wallie
     #commented out uncomment when first time
-    # Tmux_in
+    Tmux_in
     # Nvim_setup
-    Zsh_setup #commented out uncomment when first time
+    # Zsh_setup #commented out uncomment when first time
     # Script_install #commented out uncomment when first time
     # Ghostty_setup
     echo ""
