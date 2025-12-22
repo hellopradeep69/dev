@@ -29,7 +29,7 @@ Install_pkg() {
     pkg update -y && pkg upgrade -y
 
     echo "Installing essential packages..."
-    pkg install -y git curl wget vim nano htop zsh tmux python neovim iproute2 fzf npm eza
+    pkg install -y git curl wget vim nano htop zsh tmux python neovim iproute2 fzf eza
 }
 
 # Local bin in bash
@@ -78,7 +78,7 @@ Nvim_setup() {
     echo "Nvim setuping.."
     rm -rf ~/.config/nvim
     mkdir -p ~/.config/nvim
-    git clone https://github.com/hellopradeep69/nvim.git ~/.config/nvim/
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
     rm -rf ~/.config/nvim/.git
     rm -rf ~/.config/nvim/README.md
 }

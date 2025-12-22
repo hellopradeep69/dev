@@ -235,6 +235,7 @@ include /etc/sway/config.d/*
 
 # Exec
 exec --no-startup-id wl-paste --watch cliphist store
+exec --no-startup-id mako
 # exec_always autotiling
 
 # Focus on window activation

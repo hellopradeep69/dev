@@ -78,7 +78,7 @@ Script_install() {
 }
 
 Main() {
-    Install_font
+    # Install_font
     Install_pack
     Install_wallie
     #commented out uncomment when first time
@@ -95,7 +95,8 @@ case "$Options" in
 -help)
     echo "Usage:"
     echo "./Arch.sh -hyprland        to install hyprland and config"
-    echo "./Arch.sh -sway            to install hyprland and config"
+    echo "./Arch.sh -sway            to install sway and config"
+    echo "./Arch.sh -i3              to install i3wm and config"
     ;;
 -hyprland)
     bash $HOME/dev/hyprland.sh
@@ -114,3 +115,4 @@ esac
 
 echo ""
 echo "Now You can proudly say I use arch btw"
+echo ""
