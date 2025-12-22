@@ -78,7 +78,7 @@ Nvim_setup() {
     echo "Nvim setuping.."
     rm -rf ~/.config/nvim
     mkdir -p ~/.config/nvim
-    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    git clone https://github.com/hellopradeep69/lazyvimed.git ~/.config/nvim/
     rm -rf ~/.config/nvim/.git
     rm -rf ~/.config/nvim/README.md
 }
@@ -89,6 +89,18 @@ Tmux_conf() {
 }
 
 
+Script_install(){
+    echo "Scripting Install"
+
+    echo "trashing scripts"
+    trash "$HOME/.local/bin/"
+    mkdir -p "$HOME/.local/bin/"
+
+    echo " "
+    cp -r $HOME/dev/resource/scripts/. $HOME/.local/bin/
+    echo "Scripts copied to $HOME/.local/bin/"
+}
+
 Main() {
     banner
     Install_pkg
@@ -96,6 +108,8 @@ Main() {
     Bash_bin
     Tmux_conf
     Zsh_setup
+    Nvim_setup
+    Script_install
 }
 
 Main
