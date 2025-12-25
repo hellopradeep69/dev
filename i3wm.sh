@@ -7,14 +7,16 @@ Install_i3() {
 }
 
 Make_dir() {
-    trash $HOME/.config/i3status/ $HOME/.config/i3/
+    trash $HOME/.config/i3status/ $HOME/.config/i3/ $HOME/.config/picom/
     mkdir -p $HOME/.config/i3status/
     mkdir -p $HOME/.config/i3/
+    mkdir -p $HOME/.config/picom/
 }
 
 Copy_it() {
     cp -r $HOME/dev/resource/i3/. $HOME/.config/i3
     cp -r $HOME/dev/resource/i3status/. $HOME/.config/i3status
+    cp -r $HOME/dev/resource/picom/. $HOME/.config/picom
 }
 
 Main() {

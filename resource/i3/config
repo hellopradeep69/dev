@@ -224,6 +224,7 @@ new_float  pixel 1
 
 # Autostart
 exec_always --no-startup-id ~/.config/i3/autostart.sh
+exec_always --no-startup-id picom
 
 # Keybinds
 
