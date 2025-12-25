@@ -28,6 +28,8 @@
 - terminal : ghostty
 - browser : zen or firefox alike
 - file manager: thunar (see i like xfce stuff)
+- player :mpv
+- screenshot - flameshot
 - coding : nvim
 util : fzf,curl,wget,git,fastfetch,
 - other stuff : telegram,obs etc
