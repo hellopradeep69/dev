@@ -1,5 +1,6 @@
 things to backup | Raw file will show the detail
 
+
 <!-- ghostty -->
 <!-- nvim -->
 <!-- sway  -->
@@ -8,3 +9,6 @@ things to backup | Raw file will show the detail
 <!-- zsh -->
 <!-- hyprland -->
 <!-- waybar -->
+
+
+

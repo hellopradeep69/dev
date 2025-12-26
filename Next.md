@@ -2,7 +2,7 @@
 
 ----------
 
-### new
+### new (soon ig)[winner fn : eos]
 
 - eos
 - Fedora
@@ -17,10 +17,12 @@
 - vanila arch with i3wm only
   - pure arch works same too but i am confused with arch and void linux what should
      i use arch + i3wm  or void + i3wm
+     okie now it seems arch is eazy when compared to void
 
 - void
  - void seems different gonna try like runit what it does and how hard is it
     pros (very light weight and nothing ships with it i lit mean nothing )
+    cons (Hard !! to install or skill issue)
     de (gonna try like i3wm or sway whatever i feel / mostly i3wm)
 
 #### thing i use in old (cuz i wont be installing any de like xfce btw i love xfce )
@@ -28,8 +30,10 @@
 - terminal : ghostty
 - browser : zen or firefox alike
 - file manager: thunar (see i like xfce stuff)
-- player :mpv
+- player : mpv
 - screenshot - flameshot
+- img : term or ristretto
+- gimp : gimp
 - coding : nvim
 util : fzf,curl,wget,git,fastfetch,
 - other stuff : telegram,obs etc
