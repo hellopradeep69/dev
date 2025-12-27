@@ -95,13 +95,22 @@ case "$Options" in
 -help)
     # TODO: add help
     echo "Usage:"
-    echo "./Arch.sh -hyprland        to install hyprland and config"
-    echo "./Arch.sh -sway            to install sway and config"
-    echo "./Arch.sh -i3              to install i3wm and config"
+    echo "distro available : void and arch"
+    echo " "
+    echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
+    echo "./dev.sh -arch -sway            to install sway and config in arch"
+    echo "./dev.sh -arch -i3              to install i3wm and config in arch"
+    echo "./dev.sh -void -i3              to install i3wm and config in arch"
+    echo " "
+    echo "           * void script only support i3-wm for now"
     ;;
 -arch)
     Main
     Arch_pack
+    ;;
+-void)
+    Main
+    void_pack
     ;;
 -hyprland)
     bash $HOME/dev/hyprland.sh
@@ -117,6 +126,19 @@ case "$Options" in
     echo "-help for info on installing hyprland and sway "
     ;;
 esac
+
+case "$Options2" in
+-hyprland)
+    bash $HOME/dev/hyprland.sh
+    ;;
+-sway)
+    bash $HOME/dev/sway.sh
+    ;;
+-i3)
+    bash $HOME/dev/i3wm.sh
+    ;;
+esac
+
 
 echo ""
 echo "Now You can proudly say I use arch btw"

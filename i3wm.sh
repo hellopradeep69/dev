@@ -3,7 +3,11 @@
 
 Install_i3() {
     # sudo pacman -Syu
-    sudo pacman -S --noconfirm --needed i3-wm i3lock i3status dunst rofi xclip copyq picom
+    if command -v pacman >/dev/null 2>&1;then
+        sudo pacman -S --noconfirm --needed i3-wm i3lock i3status dunst rofi xclip copyq picom
+    else
+        sudo xbps-install -Sy rofi
+    fi
 }
 
 Make_dir() {
@@ -20,6 +24,7 @@ Copy_it() {
 }
 
 Main() {
+    echo "installing i3wm"
     echo "Rofi doesnt need any like config"
     Install_i3
     Make_dir
