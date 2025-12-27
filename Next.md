@@ -25,6 +25,10 @@
     cons (Hard !! to install or skill issue)
     de (gonna try like i3wm or sway whatever i feel / mostly i3wm)
 
+> [!NOTE]
+> after intense thought i have decided to go for i3wm with pure arch and will later
+>    switch to void (after : <if> i get my new lap)
+
 #### thing i use in old (cuz i wont be installing any de like xfce btw i love xfce )
 
 - terminal : ghostty
