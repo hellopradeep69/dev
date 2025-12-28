@@ -7,8 +7,8 @@ Options2=$2
 Arch_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
-        btop curl wget trash-cli gcc nodejs npm neovim\
-        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto fzf
+        btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli\
+        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
