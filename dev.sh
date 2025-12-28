@@ -7,18 +7,19 @@ Options2=$2
 Arch_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
-        btop curl wget trash-cli gcc nodejs npm \
-        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto
+        btop curl wget trash-cli gcc nodejs npm neovim\
+        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto fzf
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
-    # fc-cache -f -v
+    fc-cache -f -v
 }
 
 void_pack(){
     # soon
     echo "voiding"
 }
+
 
 Install_wallie() {
     if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then

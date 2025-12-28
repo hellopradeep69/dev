@@ -24,6 +24,13 @@ Install_wallie() {
     fi
 }
 
+Install_yay(){
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+}
+
 Zsh_setup() {
     Shell=$(echo "$SHELL")
     if [[ $Shell == "/usr/bin/zsh" ]]; then
@@ -105,6 +112,9 @@ case "$Options" in
     ;;
 -i3)
     bash $HOME/dev/i3wm.sh
+    ;;
+-yay)
+    Install_yay
     ;;
 *)
     Main

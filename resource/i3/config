@@ -245,7 +245,7 @@ bindsym $mod+b exec zen
 bindsym $mod+p bar mode toggle
 
 # Focus on window activation
-focus_on_window_activation focus
+# focus_on_window_activation focus
 
 # focus prev
 bindsym $mod+space focus prev
