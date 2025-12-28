@@ -8,7 +8,8 @@ Arch_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli tree-sitter-cli\
-        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto
+        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto\
+        thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -23,6 +24,7 @@ void_pack(){
 
 Install_wallie() {
     if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
+        mkdir "$HOME/Pictures"
         echo "Arch comes with anime waifu"
         cp "$HOME/dev/resource/wallpaper/anime_waifu.jpg" "$HOME/Pictures/"
         cp "$HOME/dev/resource/wallpaper/Arch.jpg" "$HOME/Pictures/"
@@ -104,8 +106,8 @@ case "$Options" in
     echo "           * void script only support i3-wm for now"
     ;;
 -arch)
-    Main
     Arch_pack
+    Main
     ;;
 -void)
     Main
@@ -135,6 +137,9 @@ case "$Options2" in
     ;;
 -i3)
     bash $HOME/dev/i3wm.sh
+    ;;
+-yay)
+    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
     ;;
 esac
 
