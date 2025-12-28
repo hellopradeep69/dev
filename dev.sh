@@ -8,7 +8,7 @@ Arch_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm \
-        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit
+        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -56,8 +56,6 @@ Nvim_setup() {
     rm -rf ~/.config/nvim
     mkdir -p ~/.config/nvim
     git clone https://github.com/hellopradeep69/nvim.git ~/.config/nvim/
-    rm -rf ~/.config/nvim/.git
-    rm -rf ~/.config/nvim/README.md
 }
 
 Ghostty_setup() {
