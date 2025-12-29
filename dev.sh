@@ -9,7 +9,8 @@ Arch_pack() {
     sudo pacman -S --noconfirm --needed fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli tree-sitter-cli\
         telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto\
-        thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick ufw
+        thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick ufw\
+        flameshot man-db
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -20,7 +21,6 @@ void_pack(){
     # soon
     echo "voiding"
 }
-
 
 Install_wallie() {
     if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
@@ -55,10 +55,12 @@ Tmux_in() {
 
 Nvim_setup() {
     echo ""
-    echo "Nvim setuping.."
-    rm -rf ~/.config/nvim
-    mkdir -p ~/.config/nvim
-    git clone https://github.com/hellopradeep69/nvim.git ~/.config/nvim/
+    if [[ ! -d "$HOME/.config/nvim/" ]]; then
+        echo "Nvim setuping.."
+        rm -rf ~/.config/nvim
+        mkdir -p ~/.config/nvim
+        git clone https://github.com/hellopradeep69/nvim.git ~/.config/nvim/
+    fi
 }
 
 Ghostty_setup() {
@@ -67,6 +69,16 @@ Ghostty_setup() {
     trash ~/.config/ghostty
     mkdir -p ~/.config/ghostty
     cp -r $HOME/dev/resource/ghostty/. ~/.config/ghostty/
+}
+
+Rofi_setup(){
+    echo ""
+    if [[ ! -d "$HOME/.config/rofi/" ]]; then
+        echo "Rofi Config setup"
+        mkdir -p ~/.config/rofi/
+        trash ~/.config/rofi/
+        cp -r $HOME/dev/resource/rofi/. ~/.config/rofi/
+    fi
 }
 
 Script_install() {
@@ -81,66 +93,104 @@ Script_install() {
     echo "Scripts copied to $HOME/.local/bin/"
 }
 
+Application_install(){
+    echo "installing .desktop"
+    if [[ ! -d "$HOME/.local/share/applications" ]]; then
+        mkdir -p "$HOME/.local/share/applications"
+        echo "created dir"
+    fi
+
+    trash "$HOME/.local/share/applications/"
+
+    cp -r $HOME/dev/resource/application/. $HOME/.local/share/applications/
+    echo "Applications copied to $HOME/.local/share/applications"
+}
+
+Firewall_setup(){
+    sudo systemctl enable ufw
+    sudo systemctl start ufw
+
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+}
+
+Yay_install(){
+    if command -v yay >/dev/null 2>&1;then
+        echo ""
+        echo "Yay already downloaded"
+    else
+        sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+    fi
+}
+
 Main() {
     Install_wallie
     Tmux_in
-    # Nvim_setup
+    Nvim_setup
+    Firewall_setup
+    Rofi_setup
     Zsh_setup
     Script_install
+    Application_install
     Ghostty_setup
     echo ""
     echo "Basic Setup done for your linux"
 }
 
-case "$Options" in
--help)
-    # TODO: add help
-    echo "Usage:"
-    echo "distro available : void and arch"
-    echo " "
-    echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
-    echo "./dev.sh -arch -sway            to install sway and config in arch"
-    echo "./dev.sh -arch -i3              to install i3wm and config in arch"
-    echo "./dev.sh -void -i3              to install i3wm and config in arch"
-    echo " "
-    echo "           * void script only support i3-wm for now"
-    ;;
--arch)
+Arch_install(){
     Arch_pack
+    Yay_install
     Main
-    ;;
--void)
-    Main
-    void_pack
-    ;;
--hyprland)
-    bash $HOME/dev/hyprland.sh
-    ;;
--sway)
-    bash $HOME/dev/sway.sh
-    ;;
--i3)
-    bash $HOME/dev/i3wm.sh
-    ;;
-*)
-    Main
-    echo "-help for info on installing i3wm ,hyprland and sway "
-    ;;
+}
+
+case "$Options" in
+    -help)
+        # TODO: add help
+        echo "Usage:"
+        echo "distro available : void and arch"
+        echo " "
+        echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
+        echo "./dev.sh -arch -sway            to install sway and config in arch"
+        echo "./dev.sh -arch -i3              to install i3wm and config in arch"
+        echo "./dev.sh -void -i3              to install i3wm and config in arch"
+        echo " "
+        echo "           * void script only support i3-wm for now"
+        ;;
+    -arch)
+        Arch_install
+        ;;
+    -void)
+        Main
+        void_pack
+        ;;
+    -hyprland)
+        bash $HOME/dev/hyprland.sh
+        ;;
+    -sway)
+        bash $HOME/dev/sway.sh
+        ;;
+    -i3)
+        bash $HOME/dev/i3wm.sh
+        ;;
+    *)
+        Main
+        echo "-help for info on installing i3wm ,hyprland and sway "
+        ;;
 esac
 
 case "$Options2" in
--hyprland)
-    bash $HOME/dev/hyprland.sh
-    ;;
--sway)
-    bash $HOME/dev/sway.sh
-    ;;
--i3)
-    bash $HOME/dev/i3wm.sh
-    ;;
--yay)
-    sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-    ;;
+    -hyprland)
+        bash $HOME/dev/hyprland.sh
+        ;;
+    -sway)
+        bash $HOME/dev/sway.sh
+        ;;
+    -i3)
+        bash $HOME/dev/i3wm.sh
+        ;;
+    -yay)
+        sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+        ;;
 esac
 
 
