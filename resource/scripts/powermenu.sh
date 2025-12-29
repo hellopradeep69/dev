@@ -8,7 +8,7 @@ SESSION=$(echo "$XDG_CURRENT_DESKTOP $DESKTOP_SESSION $XDG_SESSION_TYPE $WAYLAND
 lock() {
     if [[ "$SESSION" == *x11* ]] || [[ -z "$WAYLAND_DISPLAY" ]]; then
         # i3 / X11
-        i3lock -i ~/Downloads/Arch.png
+        i3lock -c 282a36
     else
         # Wayland (Sway / Hyprland)
         swaylock -c 282a36
@@ -27,7 +27,7 @@ logout() {
 
 suspend() {
     if [[ "$SESSION" == *x11* ]] || [[ -z "$WAYLAND_DISPLAY" ]]; then
-        i3lock -i ~/Downloads/Arch.png && systemctl suspend
+        i3lock -c 282a36 && systemctl suspend
     else
         swaylock --daemonize -c 282a36 && systemctl suspend
     fi
