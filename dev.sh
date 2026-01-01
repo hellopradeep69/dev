@@ -10,7 +10,7 @@ Arch_pack() {
         btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli tree-sitter-cli\
         telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto\
         thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick ufw\
-        flameshot man-db
+        flameshot man-db tig
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -20,6 +20,7 @@ Arch_pack() {
 void_pack(){
     # soon
     echo "voiding"
+    bash "$HOME/dev/void.sh"
 }
 
 Install_wallie() {
