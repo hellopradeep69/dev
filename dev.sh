@@ -108,11 +108,15 @@ Application_install(){
 }
 
 Firewall_setup(){
-    sudo systemctl enable ufw
-    sudo systemctl start ufw
+    if command -v systemctl >/dev/null 2>&1;then
+        sudo systemctl enable ufw
+        sudo systemctl start ufw
 
-    sudo ufw default deny incoming
-    sudo ufw default allow outgoing
+        sudo ufw default deny incoming
+        sudo ufw default allow outgoing
+    else
+        echo "activate your own firewall"
+    fi
 }
 
 Yay_install(){
@@ -144,6 +148,11 @@ Arch_install(){
     Main
 }
 
+Void_install(){
+    Main
+    void_pack
+}
+
 case "$Options" in
     -help)
         # TODO: add help
@@ -161,8 +170,7 @@ case "$Options" in
         Arch_install
         ;;
     -void)
-        Main
-        void_pack
+        Void_install
         ;;
     -hyprland)
         bash $HOME/dev/hyprland.sh
