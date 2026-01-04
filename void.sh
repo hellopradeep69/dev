@@ -3,7 +3,8 @@
 
 Void_util(){
     echo "instaling the essential"
-    sudo xbps-install -S --yes  NetworkManager pipewire linux-firmware-amd dbus runit-iptables
+    sudo xbps-install -S --yes  NetworkManager pipewire linux-firmware-amd dbus runit-iptables \
+        xorg-input-drivers
 
 }
 
@@ -20,8 +21,9 @@ Font_install(){
     mkdir -p ~/.local/share/fonts
 
     if [ ! -f "$HOME/.local/share/fonts/JetBrainsMonoNerdFont-Regular.ttf" ]; then
-    wget -O JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-    unzip JetBrainsMono.zip -d ~/.local/share/fonts
+        wget -O JetBrainsMono.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+        unzip JetBrainsMono.zip -d ~/.local/share/fonts
+        rm JetBrainsMono.zip
     fi
 
     sudo xbps-install -S --yes terminus-font font-iosevka
@@ -68,8 +70,9 @@ Main(){
     Void_pack
     Font_install
     Start_i3
-    Enable_service
-    Disable_service
+    echo "try to prefer manual enable disable"
+    # Enable_service
+    # Disable_service
 }
 
 Main
