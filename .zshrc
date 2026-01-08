@@ -15,6 +15,7 @@ autoload -Uz _zinit
 
 # export
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+[[ -f ~/.zprofile ]] && source ~/.zprofile
 
 # russel theme
 zi snippet OMZL::git.zsh
