@@ -4,8 +4,9 @@
 
 ### new (soon ig)[winner fn : eos]
 
-- eos
-- Fedora
+- eos => (3.3G Kde as live iso) [xfce]
+- Fedora => (2.6G xfce) [seems have bloat like libra off and stuff]
+- ~~opensuse =>(4.3G) [hell naw iso seems too much size]~~
 - WIndow (yuck for a month maybe)
     why not like i wanna learn it with xfce
 
