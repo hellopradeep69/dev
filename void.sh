@@ -5,7 +5,6 @@ Void_util(){
     echo "instaling the essential"
     sudo xbps-install -S --yes  NetworkManager pipewire linux-firmware-amd dbus runit-iptables \
         xorg-input-drivers
-
 }
 
 Void_pack() {
@@ -14,7 +13,8 @@ Void_pack() {
         btop curl wget trash-cli gcc nodejs neovim fzf github-cli tree-sitter\
         telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit unzip  \
         flameshot man-db
-    }
+    echo ""
+}
 
 Font_install(){
     echo "Installing font"
