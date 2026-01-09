@@ -77,7 +77,7 @@ volume master {
 }
 
 read_file brightness {
-        path="/sys/class/backlight/amdgpu_bl1/brightness"
+        path="/sys/class/backlight/intel_backlight/brightness"
         format=" %content %  "
 }
 

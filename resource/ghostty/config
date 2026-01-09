@@ -10,7 +10,7 @@ confirm-close-surface=false
 fullscreen = false
 window-decoration = server
 
-background-opacity = 0.85
+background-opacity = 0.90
 # background-blur = true
 
 # cursor

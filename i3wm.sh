@@ -43,10 +43,11 @@ Main() {
     echo "done"
 }
 
+Main
+
 if [[ -f "/sys/class/power_supply/BAT0/capacity" ]]; then
     echo "Seems like you are having intel"
     Intel_status
     echo "intel setup"
 fi
 
-Main
