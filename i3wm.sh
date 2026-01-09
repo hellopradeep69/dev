@@ -19,10 +19,16 @@ Make_dir() {
     mkdir -p $HOME/.config/picom/
 }
 
+
 Copy_it() {
     cp -r $HOME/dev/resource/i3/. $HOME/.config/i3
     cp -r $HOME/dev/resource/i3status/. $HOME/.config/i3status
     cp -r $HOME/dev/resource/picom/. $HOME/.config/picom
+}
+
+Intel_status(){
+    trash $HOME/.config/i3status/
+    cp -r /home/hellopradeep/dev/resource/i3status-intel/. $HOME/.config/i3status
 }
 
 Main() {
@@ -36,5 +42,9 @@ Main() {
     sleep 2
     echo "done"
 }
+
+if [[ -f "/sys/class/power_supply/BAT0/capacity" ]]; then
+    Intel_status
+fi
 
 Main
