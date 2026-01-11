@@ -31,15 +31,6 @@ Font_install(){
     fc-cache -f -v
 }
 
-Start_i3(){
-    if [[ ! -f "$HOME/.xinitrc" ]]; then
-        cat > "$HOME/.xinitrc" << 'EOF'
-#!/bin/sh
-exec /bin/i3
-EOF
-chmod +x "$HOME/.xinitrc"
-    fi
-}
 
 # sudo ln -s /etc/sv/<service> /var/service/
 Enable_service(){
@@ -69,7 +60,6 @@ Main(){
     Void_util
     Void_pack
     Font_install
-    Start_i3
     echo "try to prefer manual enable disable"
     # Enable_service
     # Disable_service

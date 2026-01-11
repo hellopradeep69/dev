@@ -12,3 +12,9 @@
 
 ### NOTES
 - will i be able to use nix ox
+
+### Old sys before runit
+----------
+- took 1 min to boot up according to my tablet
+- takes about 390 mb of ram in i3wm
+- 48 sec acc to systemd-analyze
