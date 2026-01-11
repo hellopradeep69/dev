@@ -11,7 +11,7 @@ Void_pack() {
     echo "Installing variour package fastfetch ghostty fd ripgrep tmux zsh btop curl wget trash-cli gcc nodejs npm "
     sudo xbps-install -S --yes  fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs neovim fzf github-cli tree-sitter \
-        telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit unzip  \
+        telegram-desktop obs acpi mpv yt-dlp eza bc w3m lazygit unzip  \
         flameshot man-db
     echo ""
 }
