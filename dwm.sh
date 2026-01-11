@@ -5,8 +5,17 @@ Install_dwm(){
     if command -v pacman >/dev/null 2>&1;then
         sudo pacman -S --noconfirm --needed dwm dmenu st
     else
-        sudo xbps-install -Sy dwm dmenu st
+        sudo xbps-install -S base-devel git libX11-devel libXft-devel libXinerama-devel
     fi
+}
+
+Suckless(){
+    if [[ ! -d "$HOME/Suckless" ]]; then
+        echo "hi"
+    else
+        echo "done"
+    fi
+
 }
 
 

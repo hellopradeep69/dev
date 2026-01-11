@@ -24,6 +24,23 @@ Section "InputClass"
 EndSection
 ```
 
+- locale[if any]
+
+Edit your profile:
+
+```bash
+nano ~/.profile
+```
+
+Add:
+```bash
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+```
+
+```bash
+source ~/.profile
+```
 
 ### dwm
 ----------
