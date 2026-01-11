@@ -156,8 +156,8 @@ Arch_install(){
 }
 
 Void_install(){
-    Main
     void_pack
+    Main
 }
 
 Help(){
