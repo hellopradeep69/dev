@@ -103,6 +103,7 @@ Application_install(){
 
     trash "$HOME/.local/share/applications/"
 
+    #TODO: If zen command not found add application - useful for void
     cp -r $HOME/dev/resource/application/. $HOME/.local/share/applications/
     echo "Applications copied to $HOME/.local/share/applications"
 }
@@ -126,6 +127,12 @@ Yay_install(){
     else
         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
     fi
+}
+
+Say_arch(){
+echo ""
+echo "Now You can proudly say I use arch btw"
+echo ""
 }
 
 Main() {
@@ -204,5 +211,5 @@ esac
 
 
 echo ""
-echo "Now You can proudly say I use arch btw"
+echo ".... Setup completed ...."
 echo ""
