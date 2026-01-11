@@ -25,3 +25,7 @@ EndSection
 ```
 
 
+### dwm
+----------
+
+- setup
