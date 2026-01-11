@@ -160,18 +160,23 @@ Void_install(){
     void_pack
 }
 
+Help(){
+    # TODO: add help
+    echo "Usage:"
+    echo "distro available : void and arch"
+    echo " "
+    echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
+    echo "./dev.sh -arch -sway            to install sway and config in arch"
+    echo "./dev.sh -arch -i3              to install i3wm and config in arch"
+    echo "./dev.sh -void -i3              to install i3wm and config in arch"
+    echo "./dev.sh -void -dwm             to install dwm and config in arch"
+    echo " "
+    echo "           * void script only support i3-wm/dwm for now"
+}
+
 case "$Options" in
     -help)
-        # TODO: add help
-        echo "Usage:"
-        echo "distro available : void and arch"
-        echo " "
-        echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
-        echo "./dev.sh -arch -sway            to install sway and config in arch"
-        echo "./dev.sh -arch -i3              to install i3wm and config in arch"
-        echo "./dev.sh -void -i3              to install i3wm and config in arch"
-        echo " "
-        echo "           * void script only support i3-wm for now"
+        Help
         ;;
     -arch)
         Arch_install
@@ -189,8 +194,7 @@ case "$Options" in
         bash $HOME/dev/i3wm.sh
         ;;
     *)
-        Main
-        echo "-help for info on installing i3wm ,hyprland and sway "
+        Help
         ;;
 esac
 
@@ -203,6 +207,9 @@ case "$Options2" in
         ;;
     -i3)
         bash $HOME/dev/i3wm.sh
+        ;;
+    -dwm)
+        bash $HOME/dev/dwm.sh
         ;;
     -yay)
         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
