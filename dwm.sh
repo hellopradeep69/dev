@@ -23,3 +23,4 @@ Main(){
     Install_dwm
 }
 
+Main
