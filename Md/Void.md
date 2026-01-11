@@ -10,17 +10,19 @@
 
 - Touchpad | /etc/X11/xorg.conf.d/40-libinput.conf
 
+```bash
+sudo mkdir -p /etc/X11/xorg.conf.d
+sudo nano /etc/X11/xorg.conf.d/90-touchpad.conf
+```
+
 ```conf
 Section "InputClass"
-	Identifier "libinput touchpad catchall"
-	MatchIsTouchpad "on"
-	MatchDevicePath "/dev/input/event*"
-	Driver "libinput"
-	Option "Tapping" "on"
-	Option "NaturalScrolling" "true"
-	Option "ClickMethod" "clickfinger"
-	Option "TappingButtonMap" "lrm"
-	Option "DisableWhileTyping" "true"
+    Identifier "touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+    Option "NaturalScrolling" "true"       # optional
+    Option "DisableWhileTyping" "true"     # optional
 EndSection
 ```
 

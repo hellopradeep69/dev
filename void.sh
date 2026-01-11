@@ -3,8 +3,8 @@
 
 Void_util(){
     echo "instaling the essential"
-    sudo xbps-install -S --yes  NetworkManager pipewire linux-firmware-amd dbus runit-iptables \
-        xorg-input-drivers
+    sudo xbps-install -S --yes xorg NetworkManager pipewire linux-firmware-amd dbus  \
+        xorg-input-drivers runit-iptables
 }
 
 Void_pack() {
@@ -12,7 +12,7 @@ Void_pack() {
     sudo xbps-install -S --yes  fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs neovim fzf github-cli tree-sitter \
         telegram-desktop obs acpi mpv yt-dlp eza bc w3m lazygit unzip  \
-        flameshot man-db ncurses-term make
+        flameshot man-db ncurses-term make wezterm firefox
     echo ""
 }
 
