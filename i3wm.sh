@@ -6,6 +6,9 @@ Install_i3() {
     if command -v pacman >/dev/null 2>&1;then
         sudo pacman -S --noconfirm --needed i3-wm i3lock i3status dunst rofi xclip \
             copyq picom brightnessctl lxappearance adapta-gtk-theme
+    elif command -v dnf >/dev/null 2>&1;then
+        sudo dnf install -y  i3 i3lock i3status dunst rofi xclip \
+            copyq picom brightnessctl lxappearance
     else
         sudo xbps-install -Sy rofi i3 i3lock i3status dunst rofi xclip \
              picom brightnessctl lxappearance
