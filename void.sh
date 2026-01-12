@@ -29,7 +29,7 @@ Font_install(){
     if [ ! -f "$HOME/.local/share/fonts/TerminusNerdFont-Regular.ttf" ]; then
         wget -O Terminus.zip \
             https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Terminus.zip
-        unzip -o Terminus.zip -d "~/.local/share/fonts"
+        unzip -o Terminus.zip -d ~/.local/share/fonts
         rm Terminus.zip
         fc-cache -fv
     fi

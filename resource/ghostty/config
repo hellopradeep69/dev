@@ -20,7 +20,7 @@ shell-integration-features = no-cursor
 
 # Theme
 # background-opacity = 0.0
-theme = Gruvbox Dark Hard
+theme = GruvboxDarkHard
 background = #000000
 
 # Keybind
