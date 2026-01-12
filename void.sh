@@ -12,7 +12,7 @@ Void_pack() {
     sudo xbps-install -S --yes  fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs neovim fzf github-cli tree-sitter \
         telegram-desktop obs acpi mpv yt-dlp eza bc w3m lazygit unzip  \
-        man-db ncurses-term make wezterm firefox xfce4-screenshooter
+        man-db ncurses-term make wezterm firefox xfce4-screenshooter CopyQ
     echo ""
 }
 
