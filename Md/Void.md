@@ -21,8 +21,8 @@ Section "InputClass"
     MatchIsTouchpad "on"
     Driver "libinput"
     Option "Tapping" "on"
-    Option "NaturalScrolling" "true"       # optional
-    Option "DisableWhileTyping" "true"     # optional
+    Option "NaturalScrolling" "true"
+    Option "DisableWhileTyping" "true"
 EndSection
 ```
 
@@ -31,16 +31,21 @@ EndSection
 Edit your profile:
 
 ```bash
-nano ~/.profile
-```
+# before
+sudo nvim /etc/default/libc-locales
 
-Add:
-```bash
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+# after
+sudo xbps-reconfigure -f glibc-locales
 ```
 
 ```bash
-source ~/.profile
+# uncomment
+en_US.UTF-8
 ```
+
+### Setup
+----------
+- For minimal and base setup
+
+- i3 installed
 

@@ -10,7 +10,7 @@ Arch_pack() {
         btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli tree-sitter-cli\
         telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto\
         thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick ufw\
-        flameshot man-db tig
+        man-db tig xfce4-screenshooter
 
     echo "Installing font"
     sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -168,7 +168,7 @@ Help(){
     echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
     echo "./dev.sh -arch -sway            to install sway and config in arch"
     echo "./dev.sh -arch -i3              to install i3wm and config in arch"
-    echo "./dev.sh -void -i3              to install i3wm and config in arch"
+    echo "bash dev.sh -void -i3           to install i3wm and config in arch"
     echo " "
     echo "           * void script only support i3-wm for now"
 }

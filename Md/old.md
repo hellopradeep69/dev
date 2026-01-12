@@ -18,3 +18,8 @@
 - took 1 min to boot up according to my tablet
 - takes about 390 mb of ram in i3wm
 - 48 sec acc to systemd-analyze
+
+- After
+    - took like 35 sec acc to tab
+    - no systemd-analyze
+    - same amount of ram it seems

@@ -37,7 +37,7 @@
 - browser : zen or firefox alike
 - file manager: thunar (see i like xfce stuff)
 - player : mpv
-- screenshot - flameshot
+- screenshot - xfce4-screenshooter
 - img : term or ristretto
 - gimp : gimp
 - coding : nvim

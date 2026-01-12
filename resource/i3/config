@@ -202,10 +202,11 @@ bar {
 }
 
 # Assign
-assign [class="Telegram"] 10
 assign [class="zen"] 2
 assign [class="vlc"] 4
+assign [class="Thunar"] 3
 assign [class="dev.zed.Zed"] 3
+assign [class="Telegram"] 10
 
 # no focus
 no_focus [class="dev.zed.Zed"]
@@ -252,10 +253,10 @@ bindsym $mod+p bar mode toggle
 bindsym $mod+space focus prev
 
 # Screenshot
-bindsym Print exec flameshot launcher
+bindsym Print exec xfce4-screenshooter -f
 
 # Screenshot 2
-bindsym Shift+Print exec gnome-screenshot -a
+bindsym Shift+Print exec  xfce4-screenshooter -r
 
 # clip
 bindsym Menu exec ~/.local/bin/clipboard.sh
