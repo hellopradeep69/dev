@@ -108,6 +108,11 @@ Application_install(){
     echo "Applications copied to $HOME/.local/share/applications"
 }
 
+Zen_install(){
+    cp -r $HOME/dev/resource/zen/. $HOME/.local/share/applications/
+    echo "zen copied to $HOME/.local/share/applications"
+}
+
 Firewall_setup(){
     if command -v systemctl >/dev/null 2>&1;then
         sudo systemctl enable ufw
@@ -158,6 +163,7 @@ Arch_install(){
 Void_install(){
     void_pack
     Main
+    Zen_install
 }
 
 Help(){

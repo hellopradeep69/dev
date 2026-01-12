@@ -8,7 +8,7 @@ Install_i3() {
             copyq picom brightnessctl lxappearance adapta-gtk-theme
     else
         sudo xbps-install -Sy rofi i3 i3lock i3status dunst rofi xclip \
-            copyq picom brightnessctl lxappearance
+             picom brightnessctl lxappearance
     fi
 }
 
