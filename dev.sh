@@ -23,12 +23,6 @@ void_pack(){
     bash "$HOME/dev/void.sh"
 }
 
-Fedora_pack(){
-    # soon
-    echo "voiding"
-    bash "$HOME/dev/fedora.sh"
-}
-
 Install_wallie() {
     if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
         mkdir "$HOME/Pictures"
@@ -172,11 +166,6 @@ Void_install(){
     Zen_install
 }
 
-Fedora_install(){
-    Fedora_pack
-    Main
-    Zen_install
-}
 
 Help(){
     # TODO: add help
