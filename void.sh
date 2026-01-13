@@ -4,7 +4,8 @@
 Void_util(){
     echo "instaling the essential"
     sudo xbps-install -S --yes xorg NetworkManager pipewire linux-firmware-amd dbus  \
-        xorg-input-drivers runit-iptables
+        xorg-input-drivers runit-iptables mesa mesa-dri mesa-vaapi mesa-vdpau \
+        libva libva-utils ffmpeg
 }
 
 Void_pack() {
