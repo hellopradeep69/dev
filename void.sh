@@ -35,9 +35,11 @@ Font_install(){
         fc-cache -fv
     fi
 
-    sudo xbps-install -S --yes terminus-font font-iosevka
+    echo "builing font for emoji and charc"
+    sudo xbps-install -S --yes terminus-font noto-fonts-ttf noto-fonts-emoji
 
     fc-cache -f -v
+    sudo xbps-reconfigure -f fontconfig
 }
 
 

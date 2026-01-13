@@ -111,7 +111,7 @@ Application_install(){
 Zen_install(){
     if ! command -v zen >/dev/null 2>&1;then
         wget -qO- https://github.com/zen-browser/desktop/releases/latest/download/zen.linux-x86_64.tar.xz | sudo tar xJ -C /opt
-        sudo ln -sf /opt/zen/zen /usr/bin/zen
+        sudo ln -sf /opt/zen/zen /usr/bin/zen-browser
         echo "zen installed"
     fi
 }

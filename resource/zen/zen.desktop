@@ -2,7 +2,7 @@
 Version=1.0
 Name=zen
 Comment=browser
-Exec=zen
+Exec=zen-browser
 Terminal=false
 Type=Application
 Categories=Utility;
