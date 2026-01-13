@@ -109,6 +109,17 @@ Application_install(){
 }
 
 Zen_install(){
+    if ! command -v zen >/dev/null 2>&1;then
+        wget -qO- https://github.com/zen-browser/desktop/releases/latest/download/zen.linux-x86_64.tar.xz | sudo tar xJ -C /opt
+        sudo ln -sf /opt/zen/zen /usr/bin/zen
+        echo "zen installed"
+    fi
+}
+
+Zen_app(){
+    echo "zenning"
+    Zen_install
+
     cp -r $HOME/dev/resource/zen/. $HOME/.local/share/applications/
     echo "zen copied to $HOME/.local/share/applications"
 }
@@ -163,7 +174,7 @@ Arch_install(){
 Void_install(){
     void_pack
     Main
-    Zen_install
+    Zen_app
 }
 
 
