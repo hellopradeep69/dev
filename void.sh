@@ -4,7 +4,8 @@
 Void_util(){
     echo "instaling the essential"
     sudo xbps-install -S --yes xorg NetworkManager pipewire linux-firmware-amd dbus  \
-        xorg-input-drivers runit-iptables
+        xorg-input-drivers runit-iptables mesa mesa-dri mesa-vaapi mesa-vdpau \
+        libva libva-utils ffmpeg
 }
 
 Void_pack() {
@@ -12,7 +13,7 @@ Void_pack() {
     sudo xbps-install -S --yes  fastfetch ghostty fd ripgrep tmux zsh \
         btop curl wget trash-cli gcc nodejs neovim fzf github-cli tree-sitter \
         telegram-desktop obs acpi mpv yt-dlp eza bc w3m lazygit unzip  \
-        man-db ncurses-term make wezterm firefox xfce4-screenshooter CopyQ
+        man-db ncurses-term make wezterm xfce4-screenshooter CopyQ tig xdg-utils
     echo ""
 }
 
@@ -34,9 +35,11 @@ Font_install(){
         fc-cache -fv
     fi
 
-    sudo xbps-install -S --yes terminus-font font-iosevka
+    echo "builing font for emoji and charc"
+    sudo xbps-install -S --yes terminus-font noto-fonts-ttf noto-fonts-emoji
 
     fc-cache -f -v
+    sudo xbps-reconfigure -f fontconfig
 }
 
 
