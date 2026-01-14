@@ -343,26 +343,14 @@ Session_it() {
 check_tmux_open
 
 case "$name" in
-btop | -b)
-    btop
-    ;;
 ytdown | -yt)
     ~/.local/bin/ytdown.sh
     ;;
 twander | -d)
     twander_open "$2"
     ;;
-lf)
-    lf ~/
-    ;;
-lazygit | -l)
-    lazygit
-    ;;
 fdir | -f)
     open_fzf
-    ;;
-code | -c)
-    code_start
     ;;
 gitgo | -g)
     gitgo_open
