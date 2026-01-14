@@ -4,15 +4,11 @@
 
 - Touchpad
 - locale
-<<<<<<< HEAD
 - tmux showing weird symbol (solved)[instled ncurses]
-=======
-- tmux showing weird symbol
 - volume
     - sol : (refer) [https://www.reddit.com/r/voidlinux/comments/10t5yc0/i_cant_get_thunar_to_show_partitions_and_the/]
 - thunar from xfce
     - sol : (refer) [https://www.reddit.com/r/voidlinux/comments/y6xtb6/sound_not_working_in_void_linux/]
->>>>>>> 5b2547923d051105dd68595ec2ca439daabae464
 
 #### Solution
 
