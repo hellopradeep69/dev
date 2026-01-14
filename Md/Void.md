@@ -4,7 +4,7 @@
 
 - Touchpad
 - locale
-- tmux showing weird symbol
+- tmux showing weird symbol (solved)[instled ncurses]
 
 #### Solution
 
