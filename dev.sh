@@ -72,6 +72,17 @@ Ghostty_setup() {
     cp -r $HOME/dev/resource/ghostty/. ~/.config/ghostty/
 }
 
+
+Zathura_install(){
+    echo ""
+    echo "Resetting Zathura config"
+    trash ~/.config/zathura
+    mkdir -p ~/.config/zathura/
+    cp -r $HOME/dev/resource/zathura/. ~/.config/zathura/
+}
+
+
+
 Rofi_setup(){
     echo ""
     if [[ ! -d "$HOME/.config/rofi/" ]]; then
@@ -157,6 +168,7 @@ Main() {
     Nvim_setup
     Firewall_setup
     Rofi_setup
+    Zathura_install
     Zsh_setup
     Script_install
     Application_install
