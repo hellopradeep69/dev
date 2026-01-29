@@ -54,6 +54,20 @@ en_US.UTF-8
 - i3 installed
 
 
+#### Enable / disable job
+
+----------
+
+- Enable
+```bash
+ln -s /etc/sv/<service> /var/service/
+```
+
+- Disable
+
+```bash
+rm /var/service/<service>
+```
 
 
 #### I have things enabled
