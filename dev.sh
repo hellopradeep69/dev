@@ -135,6 +135,14 @@ Zen_app(){
     echo "zen copied to $HOME/.local/share/applications"
 }
 
+Qute_app(){
+    if command -v qutebrowser >/dev/null 2>&1;then
+        cp -r $HOME/dev/resource/qutebrowser/config.py /home/hellopradeep/.config/qutebrowser/config.py
+        echo "zen copied to $HOME/.local/share/applications"
+    fi
+}
+
+
 Firewall_setup(){
     if command -v systemctl >/dev/null 2>&1;then
         sudo systemctl enable ufw
@@ -169,6 +177,7 @@ Main() {
     Firewall_setup
     Rofi_setup
     Zathura_install
+    Qute_app
     Zsh_setup
     Script_install
     Application_install
