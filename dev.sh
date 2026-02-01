@@ -216,6 +216,9 @@ case "$Options" in
     -help)
         Help
         ;;
+    -nix)
+        Main
+        ;;
     -arch)
         Arch_install
         ;;
