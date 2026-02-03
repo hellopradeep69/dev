@@ -207,7 +207,7 @@ Help(){
     echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
     echo "./dev.sh -arch -sway            to install sway and config in arch"
     echo "./dev.sh -arch -i3              to install i3wm and config in arch"
-    echo "bash dev.sh -void -i3           to install i3wm and config in arch"
+    echo "bash dev.sh -void -i3           to install i3wm and config in void"
     echo " "
     echo "           * void script only support i3-wm for now"
 }
