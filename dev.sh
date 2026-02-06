@@ -142,6 +142,13 @@ Qute_app(){
     fi
 }
 
+W3m_config(){
+    if command -v w3m >/dev/null 2>&1;then
+        cp -r /home/hellopradeep/dev/resource/w3m/keymap /home/hellopradeep/.w3m/keymap
+        echo "w3m config reloaded to $HOME/.w3m/"
+    fi
+}
+
 
 Firewall_setup(){
     if command -v systemctl >/dev/null 2>&1;then
@@ -178,6 +185,7 @@ Main() {
     Rofi_setup
     Zathura_install
     Qute_app
+    W3m_config
     Zsh_setup
     Script_install
     Application_install
