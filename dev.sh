@@ -138,14 +138,14 @@ Zen_app(){
 
 Qute_app(){
     if command -v qutebrowser >/dev/null 2>&1;then
-        cp -r $HOME/dev/resource/qutebrowser/config.py /home/hellopradeep/.config/qutebrowser/config.py
+        cp -r $HOME/dev/resource/qutebrowser/config.py $HOME/.config/qutebrowser/config.py
         echo "qutebrowser copied to $HOME/.local/share/applications"
     fi
 }
 
 W3m_config(){
     if command -v w3m >/dev/null 2>&1;then
-        cp -r /home/hellopradeep/dev/resource/w3m/keymap /home/hellopradeep/.w3m/keymap
+        cp -r $HOME/dev/resource/w3m/keymap $HOME/.w3m/keymap
         echo "w3m config reloaded to $HOME/.w3m/"
     fi
 }
