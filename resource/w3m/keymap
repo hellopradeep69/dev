@@ -73,7 +73,7 @@ keymap "#" NULL
 keymap | NULL
 keymap B NULL
 keymap C-_ NULL
-keymap s NULL
+# keymap s NULL
 keymap v NULL
 keymap ESC-s NULL
 keymap S NULL
