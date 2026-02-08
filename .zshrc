@@ -86,7 +86,7 @@ bindkey "^e" edit-command-line
 #  Enable vi keybindings + jj to escape
 bindkey -v
 
-# Map jj to escape insert mode
+# Map jj to escape insert mode || not jj
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M vicmd "^e" edit-command-line
 bindkey -a -r ':'
