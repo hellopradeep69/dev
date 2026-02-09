@@ -2,6 +2,7 @@
 
 key_set() {
     setxkbmap -option ctrl:nocaps
+    # TODO: change it | bad habit
     xmodmap -e "keycode 108 = Escape"
 }
 
