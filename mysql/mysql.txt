@@ -1,0 +1,11 @@
+--Start
+
+sudo systemctl start mariadb
+sudo systemctl enable mariadb
+
+sudo mariadb
+
+--Disable
+
+sudo systemctl stop mariadb
+sudo systemctl disable mariadb

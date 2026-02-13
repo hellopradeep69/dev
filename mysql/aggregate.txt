@@ -1,0 +1,115 @@
+
+MariaDB [(none)]> use csus23457;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [csus23457]> create table product ( prod_id int , prod_name varchar(30),cate varchar(20),qty int);
+Query OK, 0 rows affected (0.095 sec)
+
+MariaDB [csus23457]> describe product;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| prod_id   | int(11)     | YES  |     | NULL    |       |
+| prod_name | varchar(30) | YES  |     | NULL    |       |
+| cate      | varchar(20) | YES  |     | NULL    |       |
+| qty       | int(11)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.065 sec)
+
+MariaDB [csus23457]> insert into product (prod_id,prod_name,cate,price,qty) values ('114','laptop','electronics','1500','25'),
+    -> ('145','desk','furniture','500','15'),('157','monitor','electronics','1300','20'),
+    -> ('178','coffeemaker','application','300','5'),('102','keyboard','electronics','250','12')
+    -> ;
+ERROR 1054 (42S22): Unknown column 'price' in 'INSERT INTO'
+MariaDB [csus23457]> alter table product add column price varchar(20);
+Query OK, 0 rows affected (0.047 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [csus23457]> describe product
+    -> ;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| prod_id   | int(11)     | YES  |     | NULL    |       |
+| prod_name | varchar(30) | YES  |     | NULL    |       |
+| cate      | varchar(20) | YES  |     | NULL    |       |
+| qty       | int(11)     | YES  |     | NULL    |       |
+| price     | varchar(20) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.002 sec)
+
+MariaDB [csus23457]> insert into product (prod_id,prod_name,cate,price,qty) values ('114','laptop','electronics','1500','25'), ('145','desk','furniture','500','15'),('157','monitor','electronics','1300','20'), ('178','coffeemaker','application','300','5'),('102','keyboard','electronics','250','12')
+    ->
+    -> ;
+Query OK, 5 rows affected (0.071 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+MariaDB [csus23457]> select * from product;
++---------+-------------+-------------+------+-------+
+| prod_id | prod_name   | cate        | qty  | price |
++---------+-------------+-------------+------+-------+
+|     114 | laptop      | electronics |   25 | 1500  |
+|     145 | desk        | furniture   |   15 | 500   |
+|     157 | monitor     | electronics |   20 | 1300  |
+|     178 | coffeemaker | application |    5 | 300   |
+|     102 | keyboard    | electronics |   12 | 250   |
++---------+-------------+-------------+------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [csus23457]> select count(prod_name) from product;
++------------------+
+| count(prod_name) |
++------------------+
+|                5 |
++------------------+
+1 row in set (0.001 sec)
+
+MariaDB [csus23457]> select max (qty) from product;
+ERROR 1630 (42000): FUNCTION csus23457.max does not exist. Check the 'Function Name Parsing and Resolution' section in the Reference Manual
+MariaDB [csus23457]> select max(qty) from product;
++----------+
+| max(qty) |
++----------+
+|       25 |
++----------+
+1 row in set (0.001 sec)
+
+MariaDB [csus23457]> select sum(prod_name) from product;
++----------------+
+| sum(prod_name) |
++----------------+
+|              0 |
++----------------+
+1 row in set, 5 warnings (0.001 sec)
+
+MariaDB [csus23457]> select sum(qty) from product;
++----------+
+| sum(qty) |
++----------+
+|       77 |
++----------+
+1 row in set (0.001 sec)
+
+MariaDB [csus23457]> select * from product;
++---------+-------------+-------------+------+-------+
+| prod_id | prod_name   | cate        | qty  | price |
++---------+-------------+-------------+------+-------+
+|     114 | laptop      | electronics |   25 | 1500  |
+|     145 | desk        | furniture   |   15 | 500   |
+|     157 | monitor     | electronics |   20 | 1300  |
+|     178 | coffeemaker | application |    5 | 300   |
+|     102 | keyboard    | electronics |   12 | 250   |
++---------+-------------+-------------+------+-------+
+5 rows in set (0.001 sec)
+
+MariaDB [csus23457]> select max(qty) from product;
++----------+
+| max(qty) |
++----------+
+|       25 |
++----------+
+1 row in set (0.001 sec)
+
+MariaDB [csus23457]>
