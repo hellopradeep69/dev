@@ -72,6 +72,10 @@ Ghostty_setup() {
     cp -r $HOME/dev/resource/ghostty/. ~/.config/ghostty/
 }
 
+Install_theme(){
+    sudo pacman -S --noconfirm --needed arc-gtk-theme-eos eos-qogir-icons
+}
+
 
 Zathura_install(){
     echo ""
@@ -260,6 +264,9 @@ case "$Options2" in
         ;;
     -yay)
         sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+        ;;
+    -theme)
+        Install_theme
         ;;
 esac
 
