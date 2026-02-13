@@ -1,5 +1,6 @@
 ## Bluetooth [https://discovery.endeavouros.com/bluetooth/bluetooth/2021/03/]
 ----------
+
 ```bash
 # start
 sudo systemctl start bluetooth
@@ -13,7 +14,7 @@ sudo systemctl disable bluetooth
 
 ```
 
-## My trackpad dont work
+## My trackpad don't work
 ----------
 
 - touchpad
