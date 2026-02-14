@@ -1,0 +1,10 @@
+1    	CachyOS
+2    	Mint
+5    	Pop!_OS
+7    	EndeavourOS
+9    	Fedora
+15   	Arch
+18   	NixOS
+26   	FreeBSD
+44   	Void
+49   	Artix
