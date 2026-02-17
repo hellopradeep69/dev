@@ -15,3 +15,6 @@ Terminal=false
 Type=Application
 Categories=System;
 ```
+
+- [zed](https://github.com/jorgerojas26/dotfiles/tree/main/.config/zed/prompts/prompts-library-db.0.mdb)
+
