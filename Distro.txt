@@ -1,10 +1,10 @@
-1    	CachyOS
-2    	Mint
-5    	Pop!_OS
-7    	EndeavourOS
-9    	Fedora
-15   	Arch
-18   	NixOS
-26   	FreeBSD
-44   	Void
-49   	Artix
+1    	CachyOS would use in case of laptop
+2    	Mint would suggest for a beginner
+5    	Pop!_OS only for cosmic de
+7    	EndeavourOS Love for that !
+9    	Fedora mmmmm why you here ?
+15   	Arch minimal af
+18   	NixOS do i need you ?
+26   	FreeBSD bsd :-)
+44   	Void runit means no systemd
+49   	Artix same no systemd

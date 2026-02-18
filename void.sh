@@ -42,6 +42,25 @@ Font_install(){
     sudo xbps-reconfigure -f fontconfig
 }
 
+Thunar_theme(){
+    # if [[ ! -d "$HOME/.themes/Qogir" ]]; then
+    if [[  -d "$HOME/.themes/Qogir" ]]; then
+        echo "installing theme yes yes yes"
+        git clone https://github.com/vinceliuice/Qogir-theme.git
+        "$PWD/Qogir-theme/install.sh"
+        echo "Thank you theme bye bye"
+        trash "$PWD/Qogir-theme"
+    fi
+
+    if [[ ! -d "$HOME/.local/share/icons/Qogir" ]]; then
+        echo "installing icon yes yes yes"
+        git clone https://github.com/vinceliuice/Qogir-icon-theme.git
+        "$PWD/Qogir-icon-theme/install.sh" -t default
+        echo "Thank you icon bye bye"
+        trash "$PWD/Qogir-icon-theme"
+    fi
+}
+
 
 # sudo ln -s /etc/sv/<service> /var/service/
 Enable_service(){
@@ -71,6 +90,7 @@ Main(){
     Void_util
     Void_pack
     Font_install
+    Thunar_theme
     echo "try to prefer manual enable disable"
     # Enable_service
     # Disable_service
