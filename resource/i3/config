@@ -215,6 +215,7 @@ no_focus [class="Telegram"]
 for_window [class="com.mitchellh.ghostty"] border pixel 1
 for_window [class="main"] floating enable
 for_window [class="miniquad-application"] floating enable
+for_window [class="Tk"] floating enable
 
 # For window | workspace
 for_window [workspace="5"] layout tabbed
