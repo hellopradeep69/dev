@@ -8,3 +8,10 @@
 26   	FreeBSD bsd :-)
 44   	Void runit means no systemd
 49   	Artix same no systemd
+
+Rank	Distribution	Rating
+1	Artix Linux	9.19
+2	Arch Linux	9.16
+5	Void	9.1
+6	Slackware Linux		9.09
+8	Devuan GNU+Linux	9
