@@ -204,9 +204,10 @@ bar {
 # Assign
 assign [class="zen"] 2
 assign [class="vlc"] 4
+assign [class="mpv"] 4
 assign [class="Thunar"] 3
 assign [class="dev.zed.Zed"] 3
-assign [class="Telegram"] 10
+assign [class="Telegram"] 3
 
 # no focus
 no_focus [class="dev.zed.Zed"]
