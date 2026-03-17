@@ -10,21 +10,22 @@
 ----------
 
 - Mine
-1  3   MXLinux      1964=
-2  4   Debian       1578<
-3  12  openSUSE     780<
-4  15  NixOS        568=
-5  18  antiX        513=
-6  27  SparkyLinux  399>
-7  30  Puppy        362=
-8  31  Alpine       346>
-9  41  Lite         306=
-10  42  Devuan       285=
-11  43  Artix        268>
-12  48  DragonOS     243>
-13  53  Lubuntu      233>
-14  55  Slackware    232=
-15  72  Tinycore     193=
+3   MXLinux      1964=
+4   Debian       1578<
+6   Pop!_OS      1380>
+12  openSUSE     780<
+15  NixOS        568=
+18  antiX        513=
+27  SparkyLinux  399>
+30  Puppy        362=
+31  Alpine       346>
+41  Lite         306=
+42  Devuan       285=
+43  Artix        268>
+48  DragonOS     243>
+53  Lubuntu      233>
+55  Slackware    232=
+72  Tinycore     193=
 
 - Ai
 1  MX Linux
@@ -45,20 +46,18 @@
 
 - Final list
 
-1  MXLinux
-2  Debian
-3  openSUSE
-4  antiX
-5  SparkyLinux
-6  Puppy
-7  Alpine
-8  Lite
-9  Devuan
+1   MXLinux
+2   Debian
+3   openSUSE
+4   antiX
+5   SparkyLinux
+6   Puppy
+7   popos
+8   Lite
+9   Devuan
 10  Artix
-11  DragonOS
-12  Lubuntu
-13  Slackware
-14  Tinycore
-15  Linux Mint
-16  Q4OS
-17  Peppermint OS
+11  Lubuntu
+12  Tinycore
+13  Linux Mint
+14  Q4OS
+15  Peppermint OS
