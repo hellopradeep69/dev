@@ -46,20 +46,22 @@
 14.  Peppermint OS
 15.  Void Linux
 
-- Final list
+### Final list [Hope to Nope]
 ----------
-1.   MXLinux
-2.   Debian
-3.   openSUSE
-4.   antiX
-5.   SparkyLinux
-6.   Puppy
-7.   popos
-8.   Lite
-9.   Devuan
-10.  Artix
-11.  Lubuntu
-12.  Tinycore
-13.  Linux Mint
-14.  Q4OS
-15.  Peppermint OS
+- Criteria : Less iso size ,xfce or lxde ,systemd even better,stable ,Good support(2 year min)
+
+1. MXLinux
+2. Peppermint   OS
+3. Debian
+4. Devuan
+5. SparkyLinux
+6. antiX
+7. Q4OS
+8. Puppy
+9. Tinycore     (Ui)
+10. Linux Mint (Many defaults)
+11. popos (Ram consumer)
+12. Lite (old kernel)
+13. Artix (not stable)
+14. Lubuntu (No ubunutu please)
+15. openSUSE (iso size is huge)
