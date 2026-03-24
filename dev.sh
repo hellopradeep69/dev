@@ -17,10 +17,15 @@ Arch_pack() {
     fc-cache -f -v
 }
 
-void_pack(){
+Void_pack(){
     # soon
     echo "voiding"
     bash "$HOME/dev/void.sh"
+}
+
+Debian_pack(){
+    echo "voiding"
+    bash "$HOME/dev/debian.sh"
 }
 
 Install_wallie() {
@@ -183,6 +188,21 @@ echo "Now You can proudly say I use arch btw"
 echo ""
 }
 
+Basic(){
+    Install_wallie
+    Tmux_in
+    Nvim_setup
+    Rofi_setup
+    Zathura_install
+    Qute_app
+    W3m_config
+    Zsh_setup
+    Script_install
+    Application_install
+    Ghostty_setup
+    echo "Installing basic stuff"
+}
+
 Main() {
     Install_wallie
     Tmux_in
@@ -207,8 +227,14 @@ Arch_install(){
 }
 
 Void_install(){
-    void_pack
+    Void_pack
     Main
+    Zen_app
+}
+
+Debian_install(){
+    Debian_pack
+    Basic
     Zen_app
 }
 
@@ -221,6 +247,7 @@ Help(){
     echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
     echo "./dev.sh -arch -sway            to install sway and config in arch"
     echo "./dev.sh -arch -i3              to install i3wm and config in arch"
+    echo "./dev.sh -debian                to install debian"
     echo "bash dev.sh -void -i3           to install i3wm and config in void"
     echo " "
     echo "           * void script only support i3-wm for now"
@@ -230,8 +257,8 @@ case "$Options" in
     -help)
         Help
         ;;
-    -nix)
-        Main
+    -debian)
+        Debian_install
         ;;
     -arch)
         Arch_install
