@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+# https://www.atulhost.com/20-essential-things-to-do-after-installing-debian
 
 Debian_util(){
     echo "Installling essential package...."
     sudo apt update && sudo apt upgrade
-    sudo apt install curl wget git tmux zsh fd-find btop trash-cli gcc mpv bc w3m unzip
+    sudo apt install curl wget git tmux zsh fd-find btop trash-cli gcc \
+    mpv bc w3m unzip firefox zip
 }
 
 # TODO: Maintain / check it frequently
@@ -43,7 +45,7 @@ Install_ytdlp(){
 }
 
 
-# FIX: I assume it work
+# FIXME: I assume it work
 Install_font(){
     echo "Installing font"
     mkdir -p ~/.local/share/fonts

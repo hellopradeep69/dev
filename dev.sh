@@ -235,7 +235,6 @@ Void_install(){
 Debian_install(){
     Debian_pack
     Basic
-    Zen_app
 }
 
 
