@@ -1,0 +1,71 @@
+# Imap
+set imap_user="hellopradeep69@gmail.com"
+set imap_pass   = "`gpg --quiet --decrypt ~/.pass.txt.gpg`"
+
+set folder="imaps://imap.gmail.com/"
+set spoolfile="+INBOX"
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam
+
+set editor ="nvim"
+
+# Smtp
+set realname = 'hellopradeep69'
+set from = 'hellopradeep69@gmail.com'
+
+set smtp_pass = $imap_pass
+set ssl_force_tls = yes
+
+# sidebar
+set sidebar_visible = yes
+set sidebar_width = 25
+bind index,pager B sidebar-toggle-visible
+bind index,pager J  sidebar-next
+bind index,pager K    sidebar-prev
+
+# Sane defaults
+set sort = threads
+set sort_aux = reverse-last-date-received
+set mark_old = no
+set move = no          # don't move read mail out of INBOX
+unset confirmappend
+
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+set header_cache = ~/.cache/mutt
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+# Specify where to save and/or look for postponed messages.
+set postponed = +[Gmail]/Drafts
+
+# Allow Mutt to open a new IMAP connection automatically.
+unset imap_passive
+
+# Keep the IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# How often to check for new mail (time in seconds).
+set mail_check = 120
+
+## h to exit in every menu, l to go deeper, j and k for up and down, g and G for top and bottom
+bind pager,browser			h			exit
+bind attach,alias			h			exit
+bind pager				l			view-attachments
+bind pager 				k 			previous-line
+bind pager 				j 			next-line
+bind pager				g			top
+bind pager				G			bottom
+bind index				j			next-entry
+bind index				k			previous-entry
+bind attach,index 			g 			first-entry
+bind attach,index 			G 			last-entry
+bind index				l			display-message
+bind attach				l			view-attach
+bind browser,alias			l			select-entry
+bind index				/			search
+bind pager				H			display-toggle-weed
+bind attach,index,pager 		\CD 			next-page
+bind attach,index,pager 		\CU 			previous-page

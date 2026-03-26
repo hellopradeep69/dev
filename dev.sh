@@ -160,6 +160,13 @@ W3m_config(){
     fi
 }
 
+Neomutt_config(){
+    if command -v neomutt >/dev/null 2>&1;then
+        mkdir -p /home/hellopradeep/.config/mutt/
+        cp -r $HOME/dev/resource/mutt/muttrc $HOME/.config/mutt/muttrc
+        echo "neomutt config reloaded to $HOME/.config/mutt"
+    fi
+}
 
 Firewall_setup(){
     if command -v systemctl >/dev/null 2>&1;then
@@ -212,6 +219,7 @@ Main() {
     Zathura_install
     Qute_app
     W3m_config
+    Neomutt_config
     Zsh_setup
     Script_install
     Application_install
