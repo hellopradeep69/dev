@@ -1,3 +1,5 @@
+# https://docs.neomutt.org/reference/config/general.html#move
+
 # Imap
 set imap_user="hellopradeep69@gmail.com"
 set imap_pass   = "`gpg --quiet --decrypt ~/.pass.txt.gpg`"
@@ -21,12 +23,15 @@ set sidebar_width = 25
 bind index,pager B sidebar-toggle-visible
 bind index,pager J  sidebar-next
 bind index,pager K    sidebar-prev
+bind index,pager L sidebar-open
+
+# Option changed
+set abort_key = "<Esc>"
 
 # Sane defaults
 set sort = threads
 set sort_aux = reverse-last-date-received
 set mark_old = no
-set move = no          # don't move read mail out of INBOX
 unset confirmappend
 
 # Store message headers locally to speed things up.

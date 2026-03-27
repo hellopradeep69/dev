@@ -60,8 +60,3 @@
 8. Puppy
 9. Tinycore     (Ui)
 10. Linux Mint (Many defaults)
-11. popos (Ram consumer)
-12. Lite (old kernel)
-13. Artix (not stable)
-14. Lubuntu (No ubunutu please)
-15. openSUSE (iso size is huge)
