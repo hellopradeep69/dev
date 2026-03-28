@@ -21,16 +21,29 @@
     - pls work in 4gb ram (dont consume more)
     - totally free and open source
 
-- The list [view raw for deleted thing]
+- Home Gallery
+- Pigallery2
+- Photofield
+- Photoview
+- Lychee
+- LibrePhotos
+- Photonix
+- Immich
+- Nextcloud Photos
+- PhotoPrism
+- synology photos
+- PhotoStructure
+- Chevereto
+
+- The list i finalized
 ----------
-| Service |  backup/vid | app sup | free/ram | facial detect |
-| --------------- | --------------- | --------------- | --------------- | --------------- |
-| Photofield| N/Y|a|a|a|
-| Home Gallery| a|a|a|a|
-| Photoview| a|a|a|a|
-| Pigallery2| a|a|a|a|
-| Piwigo (hard to setup)| Y/Y|Y|?|Y|
-| Lychee| N/Y|N|?|N|
+| Service |  backup/vid | app sup | free/ram | facial detect | ease of setup |
+| --------------- | --------------- | --------------- | --------------- | --------------- | ---------- |
+| Home Gallery| a|a|a|a|very easy|
+| Photoview| a|a|a|a|a|
+| Pigallery2| a|a|a|a|a|
+| Photofield| N/Y|a|a|a|a|
+| Lychee| N/Y|N|?|N|a|
 
 
 - Things i reject [mostly for ram usage or being paid service]
@@ -43,3 +56,9 @@
 - synology photos (paid)
 - PhotoStructure (paid)
 - Chevereto (paid )
+
+- Home Gallery
+- Pigallery2
+- Photofield
+- Photoview
+- Lychee compare htemin term of ui feature ram usage and more in termof self host for my lap 4gb ram and amd and 500gb hdd ? what is best rank from best to worst
