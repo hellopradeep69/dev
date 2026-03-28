@@ -57,8 +57,3 @@
 - PhotoStructure (paid)
 - Chevereto (paid )
 
-- Home Gallery
-- Pigallery2
-- Photofield
-- Photoview
-- Lychee compare htemin term of ui feature ram usage and more in termof self host for my lap 4gb ram and amd and 500gb hdd ? what is best rank from best to worst
