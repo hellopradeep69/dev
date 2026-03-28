@@ -1,7 +1,7 @@
 ### What is this for
 ----------
 - i am thinking to self host music streaming and photos/video backup
-- the laptop specs and Linux distro i am going to use are documented here [[Md/Low.md]]
+- the laptop specs and Linux distro i am going to use are documented [here] (Md/Low.md)
 - the service should be functional under 4Gb ram .
 
 #### Music streaming
