@@ -58,5 +58,5 @@
 6. antiX
 7. Q4OS
 8. Puppy
-9. Tinycore     (Ui)
+9. Alpine
 10. Linux Mint (Many defaults)

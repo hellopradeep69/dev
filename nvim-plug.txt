@@ -2,7 +2,6 @@
 --------------------------
 blink.cmp
 conform.nvim
-fidget.nvim
 friendly-snippets
 gitsigns.nvim
 gruvbox

@@ -15,7 +15,7 @@ Install_unofficial(){
     echo "deb https://debian.griffo.io/apt $(lsb_release -sc 2>/dev/null) main" | sudo tee /etc/apt/sources.list.d/debian.griffo.io.list
     sudo apt update
     echo "Installling ghostty eza fzf lazygit"
-    sudo apt install  ghostty lazygit yazi eza  fzf
+    sudo apt install  ghostty yazi eza  fzf
 }
 
 Install_fd(){
@@ -79,4 +79,9 @@ Main(){
     Install_font
 }
 
-Main
+if command -v apt >/dev/null; then
+    echo "hello debian"
+    Main
+else
+    echo "nah you aint debian"
+fi
