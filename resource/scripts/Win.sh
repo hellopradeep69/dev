@@ -31,10 +31,23 @@ Run_it(){
     tmux select-window -t "$Session_name:$Win_name"
 }
 
+Bat_tmux(){
+    Bat=$(acpi | grep -o '[^ ]*%' |sed 's/%//g')
+    if [[ $Bat -le 30 ]]; then
+        echo "#[fg=red]$Bat%#[default]"
+    else
+        echo "$Bat%"
+    fi
+
+}
+
 # Create_win
 case "$option" in
     -c)
         Run_it
+        ;;
+    -b)
+        Bat_tmux
         ;;
     *)
         Create_win

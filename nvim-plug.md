@@ -5,6 +5,7 @@
 [reddit blog](https://www.reddit.com/r/neovim/comments/1p90s74/i_read_the_entire_core_maintainers_neovim_config/)
 - Notes
 ----------
+- [Pack Lazy](https://www.reddit.com/r/neovim/comments/1rpzog7/vimpack_vs_lazynvim_how_is_it/) : Pack lazy load
 - [Pack Clean](https://github.com/neovim/neovim/issues/35303) : useful to del unwanted plugin
 - [Autocmds](https://www.reddit.com/r/neovim/comments/1i2xw2m/share_your_favorite_autocmds/) : awesome Autocmds
 - [colorscheme](https://gitlab.com/motaz-shokry/gruvbox.nvim) : colorscheme i use
