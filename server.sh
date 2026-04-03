@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Is it debian ?
 # https://www.atulhost.com/20-essential-things-to-do-after-installing-debian
 
 Debian_util() {
@@ -15,7 +16,7 @@ Install_unofficial() {
     echo "deb https://debian.griffo.io/apt $(lsb_release -sc 2>/dev/null) main" | sudo tee /etc/apt/sources.list.d/debian.griffo.io.list
     sudo apt update
     echo "Installling ghostty eza fzf lazygit"
-    sudo apt install ghostty yazi eza fzf
+    sudo apt install yazi eza fzf
 }
 
 Install_fd() {

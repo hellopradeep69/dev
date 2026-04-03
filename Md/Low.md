@@ -7,6 +7,7 @@
 
 - Choosing top ten or fifteen of distro from down list. From Distrowatch [17-03-2026]
 - Be stable , iso be less than 2gb , have xfce or lxqt support, avg package manager , idl sysd.
+- [Tips:]( https://wiki.archlinux.org/index.php/Extra_keyboard_keys_in_console )
 ----------
 
 - Mine
@@ -54,9 +55,9 @@
 2. Peppermint   OS
 3. Debian
 4. Devuan
-5. SparkyLinux
-6. antiX
+5. Rocky linux
+6. void linux
 7. Q4OS
-8. Puppy
+8. antiX
 9. Alpine
 10. Linux Mint (Many defaults)
