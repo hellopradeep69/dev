@@ -55,7 +55,7 @@
 2. Peppermint   OS
 3. Debian
 4. Devuan
-5. Rocky linux
+5. Rocky/Alma linux
 6. void linux
 7. Q4OS
 8. antiX

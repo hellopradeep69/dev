@@ -23,7 +23,6 @@
 - gitsigns.nvim
 - gruvbox
 - lazydev.nvim
-- live-preview.nvim
 - mason-lspconfig.nvim
 - mason.nvim
 - mini.ai
