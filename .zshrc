@@ -15,6 +15,7 @@ autoload -Uz _zinit
 
 # export
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 [[ -f ~/.zprofile ]] && source ~/.zprofile
 
 # russel theme

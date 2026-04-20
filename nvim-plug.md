@@ -17,6 +17,7 @@
 
 0.12 rewrite plugin needed
 --------------------------
+<<<<<<< HEAD
 - blink.cmp
 - conform.nvim
 - friendly-snippets
