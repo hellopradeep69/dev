@@ -120,8 +120,6 @@ keymap ESC-o NULL
 keymap ESC-k NULL
 keymap ! NULL
 keymap C-z NULL
-keymap q NULL
-keymap Q NULL
 
 # New keybinds
 
@@ -174,7 +172,6 @@ keymap :: COMMAND
 keymap :help HELP
 keymap :down DOWNLOAD_LIST
 #keymap :hist HISTORY
-keymap :q EXIT
 keymap :settings OPTIONS
 
 # copy url to clipboard
