@@ -28,5 +28,11 @@ background = #000000
 # keybind = ctrl+c=copy_to_clipboard
 keybind = ctrl+v=paste_from_clipboard
 
+# unbind
+keybind = alt+one=unbind
+keybind = alt+two=unbind
+keybind = alt+three=unbind
+keybind = alt+four=unbind
+
 # Shader
 custom-shader = shaders/cursor_warp.glsl
