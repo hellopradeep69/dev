@@ -264,6 +264,9 @@ case "$Options" in
 -debian)
 	Debian_install
 	;;
+-temp)
+	Qute_app
+	;;
 -arch)
 	Arch_install
 	;;

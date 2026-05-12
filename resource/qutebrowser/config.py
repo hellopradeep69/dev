@@ -339,9 +339,9 @@ c.colors.tabs.pinned.selected.odd.fg = c.colors.tabs.selected.odd.fg
 config.load_autoconfig()
 
 # Tabs
-c.tabs.position = "top"
-c.completion.shrink = True
-c.tabs.show = "switching"
+# c.tabs.position = "left"
+# c.completion.shrink = True
+# c.tabs.show = "switching"
 
 # dark mode setup
 c.colors.webpage.darkmode.enabled = True
@@ -357,6 +357,10 @@ c.auto_save.session = True
 config.bind('<Ctrl+n>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+p>', 'completion-item-focus prev', mode='command')
 config.bind('t', 'open -t')
+
+#mpv
+config.bind('<Ctrl+/>', 'hint links spawn --detach mpv {hint-url} --profile=fast --hwdec=auto')
+config.bind('M','hint links spawn mpv {hint-url} --profile=fast --hwdec=auto')
 
 # Alias
 c.aliases['bd'] = 'tab-close'
