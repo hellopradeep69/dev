@@ -86,11 +86,9 @@ export LC_ALL="en_IN.UTF-8"
 zle -N edit-command-line
 bindkey "^e" edit-command-line
 
-#  Enable vi keybindings + jj to escape
+#  Enable vi keybindings
 bindkey -v
 
-# Map jj to escape insert mode || not jj
-bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M vicmd "^e" edit-command-line
 bindkey -a -r ':'
 

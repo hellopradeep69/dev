@@ -2,3 +2,5 @@ git config --global user.email "Hellopradeep69@gmail.com"
 git config --global user.name "Hellopradeep69"
 
 git config --global diff.tool nvimdiff
+
+sudo ln -sf /usr/bin/zen-browser /usr/local/bin/x-www-browser
