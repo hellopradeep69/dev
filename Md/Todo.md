@@ -1,0 +1,1 @@
+- write function to uninstall a wm do it for i3 and sway wm
