@@ -166,6 +166,14 @@ Neomutt_config() {
 	fi
 }
 
+Mpv_config() {
+	if command -v mpv >/dev/null 2>&1; then
+		mkdir -p $HOME/.config/mpv/
+		cp -r $HOME/dev/resource/mpv/mpv.conf $HOME/.config/mpv/.
+		echo "mpv config reloaded to $HOME/.config/mpv"
+	fi
+}
+
 Firewall_setup() {
 	if command -v systemctl >/dev/null 2>&1; then
 		sudo systemctl enable ufw
@@ -201,6 +209,7 @@ Basic() {
 	Zathura_install
 	Qute_app
 	W3m_config
+	Mpv_config
 	Zsh_setup
 	Script_install
 	Application_install
@@ -217,6 +226,7 @@ Main() {
 	Zathura_install
 	Qute_app
 	W3m_config
+	Mpv_config
 	Neomutt_config
 	Zsh_setup
 	Script_install
