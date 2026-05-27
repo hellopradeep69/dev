@@ -10,7 +10,7 @@ Arch_pack() {
 		btop curl wget trash-cli gcc nodejs npm neovim fzf github-cli tree-sitter-cli \
 		telegram-desktop obs-studio acpi mpv yt-dlp eza bc w3m lazygit thunar ristretto \
 		thunar-volman gvfs tumbler thunar-archive-plugin unzip imagemagick \
-		ufw man-db tig xfce4-screenshooter w3m
+		ufw man-db tig xfce4-screenshooter w3m rlwrap
 
 	echo "Installing font"
 	sudo pacman -S --noconfirm --needed ttf-jetbrains-mono-nerd ttf-terminus-nerd ttf-jetbrains-mono
@@ -158,6 +158,21 @@ W3m_config() {
 	fi
 }
 
+Cheat_sh() {
+	if ! command -v cht.sh >/dev/null 2>&1; then
+		echo "Installing cht.sh"
+		curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
+
+		echo "Tab completion for cheat.sh"
+		mkdir -p "$HOME/.zsh.d"
+		touch "$HOME/.zsh.d/_cht"
+		curl https://cheat.sh/:zsh >~/.zsh.d/_cht
+		echo 'fpath=(~/.zsh.d/ $fpath)' >>~/.zshrc
+	else
+		echo "cht.sh available"
+	fi
+}
+
 Neomutt_config() {
 	if command -v neomutt >/dev/null 2>&1; then
 		mkdir -p /home/hellopradeep/.config/mutt/
@@ -226,6 +241,7 @@ Main() {
 	Zathura_install
 	Qute_app
 	W3m_config
+	Cheat_sh
 	Mpv_config
 	Neomutt_config
 	Zsh_setup

@@ -6,6 +6,7 @@ CONFIG_DIR = Path.home() / ".config"
 
 IGNORE = {
     "gtk-3.0",
+    "gtk-4.0",
     "fontconfig",
     "dconf",
     "pulse",
@@ -21,6 +22,7 @@ Matching = {
     "obs-studio": "obs",
     "mozilla": "firefox",
     "helix": "hx",
+    "zen": "zen-browser",
 }
 
 

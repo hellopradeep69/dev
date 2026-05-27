@@ -18,6 +18,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:/home/$USER/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
 [[ -f ~/.zprofile ]] && source ~/.zprofile
+fpath=(~/.zsh.d/ $fpath)
 
 # russel theme
 zi snippet OMZL::git.zsh
