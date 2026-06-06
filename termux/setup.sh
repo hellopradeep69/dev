@@ -32,11 +32,10 @@ Zsh_setup() {
 	Shell=$(echo "$SHELL")
 	if [[ $Shell == "/usr/bin/zsh" ]]; then
 		echo "zsh"
-	elif
+	else
 		echo "not zsh"
 		chsh -s $(which zsh)
-	else
-		Set_zsh
+		# Set_zsh
 	fi
 
 	echo "Reinstalling zsh and zsh conf"
