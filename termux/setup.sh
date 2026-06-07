@@ -49,7 +49,7 @@ Nvim_setup() {
 	echo "Nvim setuping.."
 	rm -rf ~/.config/nvim
 	mkdir -p ~/.config/nvim
-	git clone https://github.com/hellopradeep70/mininvim.git ~/.config/nvim/
+	git clone https://github.com/hellopradeep69/mininvim.git ~/.config/nvim/
 }
 
 Main() {
