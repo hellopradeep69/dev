@@ -303,8 +303,8 @@ Ssh_read() {
 Ssh_open() {
 	tmux popup -E nvim -c "set ls=0" "$SSH_CACHE"
 
-	Ssh_host=$(Ssh_read)
-	Ssh_username=$(echo "$Ssh_host" | sed "s/@.*//")
+	Ssh_host=$(Ssh_read | sed "s/#.*//g")
+	Ssh_username=$(Ssh_read | sed "s/.*#//g")
 
 	if ! tmux has-session -t "$Ssh_username" 2>/dev/null; then
 		tmux new-session -ds "$Ssh_username" -c "$HOME" "ssh -p 8022 $Ssh_host"

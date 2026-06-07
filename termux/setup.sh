@@ -27,6 +27,13 @@ Set_zsh() {
 	fi
 }
 
+Tmux_setup() {
+	echo ""
+	echo "Reinstalling tmux and tmux conf"
+	[[ -f "$HOME/.tmux.conf" ]] && trash "$HOME/.tmux.conf"
+	cp -r "$HOME/dev/termux/.tmux.conf" "$HOME/.tmux.conf"
+}
+
 #do you wanna use zsh
 Zsh_setup() {
 	Shell=$(echo "$SHELL")
