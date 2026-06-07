@@ -44,10 +44,19 @@ Zsh_setup() {
 
 }
 
+Nvim_setup() {
+	echo ""
+	echo "Nvim setuping.."
+	rm -rf ~/.config/nvim
+	mkdir -p ~/.config/nvim
+	git clone https://github.com/hellopradeep70/mininvim.git ~/.config/nvim/
+}
+
 Main() {
 	Install_pkg
 	Access_termux
 	Zsh_setup
+	Nvim_setup
 }
 
 Main
