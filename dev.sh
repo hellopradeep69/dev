@@ -243,7 +243,6 @@ Main() {
 	W3m_config
 	Cheat_sh
 	Mpv_config
-	Neomutt_config
 	Zsh_setup
 	Script_install
 	Application_install
@@ -277,10 +276,10 @@ Help() {
 	echo "./dev.sh -arch -hyprland        to install hyprland and config in arch"
 	echo "./dev.sh -arch -sway            to install sway and config in arch"
 	echo "./dev.sh -arch -i3              to install i3wm and config in arch"
-	echo "./dev.sh -debian                to install debian"
+	echo "./dev.sh -debian -i3            to install i3wm and config in debian"
 	echo "bash dev.sh -void -i3           to install i3wm and config in void"
 	echo " "
-	echo "           * void script only support i3-wm for now"
+	echo "           * void/debian script only support i3-wm for now"
 }
 
 case "$Options" in
