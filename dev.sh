@@ -145,6 +145,7 @@ Zen_app() {
 
 Qute_app() {
 	if command -v qutebrowser >/dev/null 2>&1; then
+		mkdir -p $HOME/.config/qutebrowser/
 		cp -r $HOME/dev/resource/qutebrowser/config.py $HOME/.config/qutebrowser/config.py
 		echo "qutebrowser copied to $HOME/.local/share/applications"
 	fi

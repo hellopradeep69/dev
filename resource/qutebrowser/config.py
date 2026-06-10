@@ -349,18 +349,32 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 c.colors.webpage.darkmode.policy.images = 'never'
 config.set('colors.webpage.darkmode.enabled', False, 'file://*')
 
+config.set('input.insert_mode.auto_load',True)
+config.set('downloads.position','bottom')
+
 # save tabs on quit/restart
 c.auto_save.session = True
+
+c.hints.chars = "sadfjklewcmpgh"
 
 # Keybind
 # completion
 config.bind('<Ctrl+n>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+p>', 'completion-item-focus prev', mode='command')
-config.bind('t', 'open -t')
+config.bind('t', 'cmd-set-text -s :open -t')
+config.bind('<Ctrl-j>', 'cmd-set-text -s :open')
+
+# Tab
+config.bind('b', 'cmd-set-text -s :tab-select')
+config.bind('[b','tab-prev')
+config.bind(']b','tab-next')
 
 #mpv
 config.bind('<Ctrl+/>', 'hint links spawn --detach mpv {hint-url} --profile=fast --hwdec=auto')
 config.bind('M','hint links spawn mpv {hint-url} --profile=fast --hwdec=auto')
+
+# Others
+config.bind('go','scroll-to-perc 0')
 
 # Alias
 c.aliases['bd'] = 'tab-close'

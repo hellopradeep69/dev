@@ -1,3 +1,8 @@
+Dependencies
+----------
+- Python3
+- trash-cli
+
 HOW TO USE
 ---
 ```bash

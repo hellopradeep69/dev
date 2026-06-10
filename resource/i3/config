@@ -203,6 +203,7 @@ bar {
 
 # Assign
 assign [class="zen"] 2
+assign [class="qutebrowser"] 2
 assign [class="vlc"] 4
 assign [class="mpv"] 4
 assign [class="Thunar"] 3
