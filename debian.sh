@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # https://www.atulhost.com/20-essential-things-to-do-after-installing-debian
 
+# Ghostty version
+VERSION=1.3.1
+ARCH=x86_64
+
 Debian_util() {
 	echo "Installling essential package...."
 	sudo apt update && sudo apt upgrade
@@ -8,14 +12,25 @@ Debian_util() {
 		mpv bc w3m unzip firefox zip
 }
 
-# TODO: Maintain / check it frequently
-Install_unofficial() {
-	echo "Instaling unoffical stuff.."
-	curl -sS https://debian.griffo.io/EA0F721D231FDD3A0A17B9AC7808B4DD62C41256.asc | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/debian.griffo.io.gpg
-	echo "deb https://debian.griffo.io/apt $(lsb_release -sc 2>/dev/null) main" | sudo tee /etc/apt/sources.list.d/debian.griffo.io.list
-	sudo apt update
-	echo "Installling ghostty eza fzf lazygit"
-	sudo apt install ghostty yazi eza fzf
+Install_fzf() {
+	git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/dev/.fzf"
+	$HOME/dev/.fzf/install
+	trash $HOME/dev/.fzf
+}
+
+Install_eza() {
+	wget -c https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O - | tar xz
+	sudo chmod +x eza
+	sudo chown root:root eza
+	sudo mv eza /usr/local/bin/eza
+}
+
+Install_ghostty() {
+	wget https://github.com/pkgforge-dev/ghostty-appimage/releases/download/v${VERSION}/Ghostty-${VERSION}-${ARCH}.AppImage
+	chmod +x Ghostty-${VERSION}-${ARCH}.AppImage
+
+	# With sudo for system wide availability
+	sudo install ./Ghostty-${VERSION}-${ARCH}.AppImage /usr/local/bin/ghostty
 }
 
 Install_fd() {
@@ -89,7 +104,9 @@ Thunar_theme() {
 
 Main() {
 	Debian_util
-	Install_unofficial
+	Install_fzf
+	Install_eza
+	Install_ghostty
 	Install_fd
 	Install_ripgrep
 	Install_nvim
