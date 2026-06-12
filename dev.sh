@@ -28,6 +28,11 @@ Debian_pack() {
 	bash "$HOME/dev/debian.sh"
 }
 
+Server_pack() {
+	echo "serving"
+	bash "$HOME/dev/server.sh"
+}
+
 Install_wallie() {
 	if [[ ! -f "$HOME/Pictures/anime_waifu.jpg" ]]; then
 		mkdir "$HOME/Pictures"
@@ -217,6 +222,15 @@ Say_arch() {
 	echo ""
 }
 
+Debian_server() {
+	echo "Installing server stuff"
+	Server_pack
+	W3m_config
+	Mpv_config
+	Zsh_setup
+	Script_install
+}
+
 Basic() {
 	Install_wallie
 	Tmux_in
@@ -289,6 +303,9 @@ case "$Options" in
 	;;
 -debian)
 	Debian_install
+	;;
+-server)
+	Debian_server
 	;;
 -temp)
 	Qute_app

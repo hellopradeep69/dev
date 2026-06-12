@@ -10,7 +10,7 @@ Debian_util() {
 
 Install_fzf() {
 	git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME/dev/.fzf"
-	$HOME/dev/.fzf/install
+	bash "$HOME/dev/.fzf/install"
 	trash $HOME/dev/.fzf
 }
 
@@ -43,6 +43,23 @@ Install_nvim() {
 	export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 }
 
+Nvim_setup() {
+	if [[ ! -d "$HOME/.config/nvim/" ]]; then
+		echo ""
+		echo "Nvim setuping.."
+		rm -rf ~/.config/nvim
+		mkdir -p ~/.config/nvim
+		git clone https://github.com/hellopradeep69/mininvim.git ~/.config/nvim/
+	fi
+}
+
+Tmux_in() {
+	echo ""
+	echo "Reinstalling tmux and tmux conf"
+	[[ -f "$HOME/.tmux.conf" ]] && trash "$HOME/.tmux.conf"
+	cp -r "$HOME/dev/resource/server/.tmux.conf" "$HOME/.tmux.conf"
+}
+
 Install_ytdlp() {
 	sudo add-apt-repository ppa:tomtomtom/yt-dlp
 	sudo apt update
@@ -56,6 +73,8 @@ Main() {
 	Install_fd
 	Install_ripgrep
 	Install_nvim
+	Nvim_setup
+	Tmux_in
 	Install_ytdlp
 }
 
