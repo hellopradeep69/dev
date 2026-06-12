@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 # https://www.atulhost.com/20-essential-things-to-do-after-installing-debian
 
-# Ghostty version
-VERSION=1.3.1
-ARCH=x86_64
-
 Debian_util() {
 	echo "Installling essential package...."
 	sudo apt update && sudo apt upgrade
 	sudo apt install curl wget git tmux zsh fd-find btop trash-cli gcc \
-		mpv bc w3m unzip firefox zip
+		mpv bc w3m unzip zip
 }
 
 Install_fzf() {
