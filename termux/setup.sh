@@ -8,7 +8,8 @@ Install_pkg() {
 	pkg update -y && pkg upgrade -y
 
 	echo "Installing essential packages..."
-	pkg install -y git curl wget htop zsh tmux python neovim iproute2 fzf eza
+	pkg install -y git curl wget htop zsh tmux python neovim iproute2 fzf eza \
+		fd fastfetch ncdu python-yt-dlp mandoc ripgrep
 }
 
 # Access to storage
@@ -63,6 +64,7 @@ Main() {
 	Install_pkg
 	Access_termux
 	Zsh_setup
+	Tmux_setup
 	Nvim_setup
 }
 
